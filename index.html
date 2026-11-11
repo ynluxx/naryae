@@ -1,4 +1,5 @@
-
+dex · HTML
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -95,31 +96,31 @@
 <section id="nosotros" class="alt"><div class="wrap about"><div class="about-text"><h2>Quiénes somos</h2><p class="lead">Confecciones Naryae® nació el <strong>14 de marzo del 2020</strong> en Puerto Montt, y desde ese mismo instante no hemos parado.</p><p>Comenzamos con un sueño y una máquina de coser, impulsados por la pasión de entregar prendas con un estándar superior. A lo largo de los años nos hemos consolidado como un taller de confianza para familias, colegios y empresas de la región.</p><p>Cada uniforme escolar, arreglo de ropa o polerón personalizado lleva impregnado nuestro compromiso con la durabilidad, el detalle y la cercanía con cada cliente. ¡Gracias por hacernos parte de su día a día!</p></div><div class="quote"><span class="script">Style is an art</span><p style="margin:10px 0 0;color:var(--muted)">Nos dedicamos a confeccionar con calidad desde 2020.</p></div></div></section>
 <section id="contacto"><div class="wrap"><h2>¿Tienes alguna duda o consulta?</h2><p class="lead">Escríbenos directamente si necesitas algo fuera de lo estándar.</p><p><strong>WhatsApp:</strong> <a href="tel:+56934486112">+56 9 3448 6112</a><br><strong>Correo:</strong> <a href="mailto:naryae142020@gmail.com">naryae142020@gmail.com</a><br><strong>Ubicación:</strong> Puerto Montt, Chile</p><a class="btn" href="https://wa.me/56934486112?text=Hola%20Naryae%2C%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a></div></section></main>
 <footer><div class="wrap">© <span id="yr"></span> Confecciones Naryae® · Puerto Montt, Chile · <a href="https://www.instagram.com/naryae24.02" target="_blank" rel="noopener noreferrer">@naryae24.02</a></div></footer><div class="fab"><a id="fab-link" href="#carrito-seccion">🛒<span class="fab-text"> Ver Carrito</span> <span class="fab-count" id="fab-count" hidden>0</span></a></div>
-
+ 
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-icon" aria-hidden="true">✓</span><span id="toast-msg"></span><a class="toast-link" id="toast-link" href="#carrito-seccion">Ver carrito</a></div>
-
+ 
 <div class="modal-overlay" id="size-modal" aria-hidden="true"><div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="close-size-modal" type="button" aria-label="Cerrar calculadora">✕</button><h3 id="modal-title" style="margin-bottom:8px;color:var(--deep)">Calculadora de tallas por medida</h3><p style="color:var(--muted);font-size:14px">Elige qué medida tienes disponible. Para la medida de pecho, mide de axila a axila una prenda cómoda extendida en una superficie plana.</p><div class="calc-box"><label for="calc-type">Tipo de medida</label><select id="calc-type"><option value="chest">Ancho de pecho de una prenda (en plano)</option><option value="school">Estatura de la persona</option></select><label id="calc-label" for="calc-value">Ancho de pecho en plano (cm)</label><input id="calc-value" type="number" inputmode="decimal" min="25" max="80" step="0.5" placeholder="Ej.: 36"><small id="calc-hint" style="color:var(--muted)">Ancho medido de lado a lado, no contorno.</small><div class="calc-result" id="calc-output" aria-live="polite">Ingresa una medida para sugerir la talla.</div></div><p class="modal-note" style="margin-top:14px">💡 Sugerencia orientativa: el ajuste final puede variar según el modelo y la holgura preferida. Confirma la talla al cotizar por WhatsApp.</p></div></div>
-
+ 
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
 const fmt=n=>'$'+new Intl.NumberFormat('es-CL').format(n);
 const money=n=>fmt(n)+' CLP';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
+ 
 /* ===== DATOS =====
    Cada precio se escribe UNA sola vez, como [etiqueta, precio].
    El texto del menú ("Talla 4 (32 cm) - $8.500") se genera solo. */
-
+ 
 // Tabla única de tallas: nombre y ancho de pecho en plano (cm). La calculadora usa esta misma tabla.
 const SZ=[['Talla 4',32],['Talla 6',34],['Talla 8',36],['Talla 10',38],['Talla 12',41],['Talla 14',44],['Talla 16',47],['Talla S Adulto',50],['Talla M Adulto',53],['Talla L Adulto',56],['Talla XL / XXL',60]];
 // S(precios, conCm, desde): asocia una lista de precios a la tabla de tallas
 const S=(prices,cm=true,from=0)=>SZ.slice(from,from+prices.length).map(([n,c],i)=>[cm?`${n} (${c}${c===60?'+':''} cm)`:n,prices[i]]);
-
+ 
 const schoolSizes=S([26000,28000,30000,33000,35000,37000,40000,42000,44000,46000,49000]);
 const topSizes=S([8500,9500,10500,12000,13500,15000,16500,18500,20000,21500,24000]);
 const bottomSizes=S([9500,10500,11500,13000,14500,16000,17500,19500,21000,22500,25000],false);
-
+ 
 // [nombre, descripción, opciones, recargo personalización, texto personalización]
 const individual=[
 ['Camisa / Blusa Escolar','Camisa o blusa blanca tradicional para uniforme formal.',topSizes,0,'','Camisas y blusas'],
@@ -131,7 +132,7 @@ const individual=[
 // Para sumar productos: agrega una línea arriba con su categoría (última posición). Si la categoría es nueva, agrégala aquí:
 const indCats=['Camisas y blusas','Poleras','Pantalones','Faldas','Educación física'];
 let indFilter='Todas';
-
+ 
 const categories=[
 ['Servicios de Envíos',[
  ['Despacho a Domicilio (Puerto Montt)','Envío seguro de tus prendas directo a tu casa.',[['Sector Centro / Alerce / Mirasol',2500],['Sector La Vara / Lagunitas / Pelluco',4000],['Zonas Rurales / Carretera Austral',6000]]]]],
@@ -159,13 +160,13 @@ const categories=[
  ['Tazas personalizadas','Diseños personalizados en sublimación.',[['Cerámica 11 oz',3500],['Mágica térmica 11 oz',6000]]],
  ['Cojines decorativos / navideños','Incluyen relleno suave y funda lavable.',[['40 x 40 cm',8000],['50 x 50 cm',10000]]],
  ['Fundas de Almohada Personalizadas','Con fotos, frases o diseños a elección.',[['50 x 70 cm',6500]]]]]];
-
+ 
 const schools=['Liceo Las Quemas','Escuela 10 Angelmó','Colegio Darío Salas','Escuela Licarayén','Escuela Básica Melipulli','Colegio Domingo Santa María','Liceo Politécnico Mirasol','Escuela Mirasol','Colegio Creación','Escuela Rotario Bravo','Escuela Pillalinkan','Escuela Lagunitas','Colegio María Auxiliadora'];
-
+ 
 /* ===== CARRITO ===== */
 let cart=[];
 try{const saved=JSON.parse(localStorage.getItem('naryae_cart')||'[]');if(Array.isArray(saved))cart=saved.filter(x=>x&&typeof x.name==='string'&&typeof x.size==='string'&&Number.isFinite(x.qty)&&Number.isFinite(x.price)&&x.qty>0&&x.price>=0)}catch{}
-
+ 
 /* ===== TARJETAS ===== */
 function card(name,desc,options,prefix='',custom=0,customLabel='Agregar personalización'){
   const id='c'+Math.random().toString(36).slice(2);
@@ -173,19 +174,19 @@ function card(name,desc,options,prefix='',custom=0,customLabel='Agregar personal
   const qtys=Array.from({length:10},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');
   return `<article class="card" data-name="${esc(prefix+name)}" data-prices='${JSON.stringify(options.map(o=>o[1]))}' data-custom="${custom}"><h3>${esc(name)}</h3><p>${esc(desc)}</p><label for="${id}">Selecciona talla / opción</label><select class="size" id="${id}">${opts}</select>${custom?`<label class="checkbox-label"><input class="custom" type="checkbox"> ${esc(customLabel)} (+${money(custom)})</label>`:''}<div class="in-cart" hidden></div><div class="buy"><label>Cantidad<select class="qty">${qtys}</select></label><div class="price-tag"></div></div><button class="btn green add" type="button">Agregar al carrito</button></article>`;
 }
-
+ 
 function updatePrice(e){
   const c=e.matches('.card')?e:e.closest('.card'),s=c.querySelector('.size'),p=JSON.parse(c.dataset.prices);
   const v=(p[+s.value]??p[0]??0)+(c.querySelector('.custom')?.checked?+c.dataset.custom:0);
   c.querySelector('.price-tag').textContent=money(v*(+c.querySelector('.qty').value||1));
 }
-
+ 
 // Prendas sueltas: los botones solo muestran/ocultan tarjetas, así no se pierde lo que ya elegiste
 function renderIndTabs(){
   $('ind-tabs').innerHTML=['Todas',...indCats].map(c=>`<button class="chip" type="button" data-ind="${esc(c)}" aria-pressed="${c===indFilter}">${esc(c)}</button>`).join('');
   document.querySelectorAll('#individual-grid .card').forEach(c=>{c.hidden=indFilter!=='Todas'&&c.dataset.cat!==indFilter});
 }
-
+ 
 // Colegios y prendas sueltas: se dibujan UNA sola vez (así no pierden la talla elegida al filtrar el catálogo)
 function renderStatic(){
   $('schools-grid').innerHTML=schools.map(s=>card(s,'Uniforme institucional completo (buzo, polera y prendas oficiales).',schoolSizes,'Uniforme ',3000,'Agregar bordado institucional o nombre')).join('');
@@ -193,7 +194,7 @@ function renderStatic(){
   renderIndTabs();
   document.querySelectorAll('#schools-grid .card,#individual-grid .card').forEach(updatePrice);
 }
-
+ 
 // Catálogo: se redibuja al filtrar/buscar, pero recuerda talla, cantidad y extras ya elegidos
 let categoryFilter='Todo';
 function renderCatalog(){
@@ -211,7 +212,7 @@ function renderCatalog(){
   });
   markCards();
 }
-
+ 
 function renderCart(){
   try{localStorage.setItem('naryae_cart',JSON.stringify(cart))}catch{}
   const n=cart.reduce((a,i)=>a+i.qty,0);document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=n);$('fab-count').textContent=n;$('fab-count').hidden=!n;
@@ -219,14 +220,14 @@ function renderCart(){
   $('cart-total-price').textContent=money(cart.reduce((a,x)=>a+x.price,0));
   markCards();
 }
-
+ 
 // Muestra en cada tarjeta cuántas unidades de ese producto ya están en el carrito
 function markCards(){document.querySelectorAll('.card').forEach(c=>{const n=cart.filter(x=>x.name===c.dataset.name).reduce((a,x)=>a+x.qty,0),el=c.querySelector('.in-cart');if(el){el.hidden=!n;el.textContent=n?`✓ Ya tienes ${n} en tu carrito`:''}})}
-
+ 
 let toastTimeout;
 function showToast(message){const toast=$('toast');$('toast-msg').textContent=message;toast.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.classList.remove('show'),4500)}
 $('toast-link').addEventListener('click',()=>$('toast').classList.remove('show'));
-
+ 
 // Confirmación al agregar: botón, tarjeta, botón flotante y aviso con acceso al carrito
 function confirmAdd(b,c,qty){
   const name=c.querySelector('h3').textContent,total=cart.reduce((a,i)=>a+i.qty,0),fab=$('fab-link');
@@ -235,7 +236,7 @@ function confirmAdd(b,c,qty){
   c.classList.remove('flash');void c.offsetWidth;c.classList.add('flash');flyToCart(b,()=>{fab.classList.remove('bump');void fab.offsetWidth;fab.classList.add('bump')});
   showToast(`${qty}x ${name} agregado · ${total} ${total===1?'producto':'productos'} en tu carrito`);
 }
-
+ 
 /* ===== EVENTOS ===== */
 document.addEventListener('change',e=>{if(e.target.matches('.size,.qty,.custom'))updatePrice(e.target)});
 document.addEventListener('click',e=>{
@@ -252,11 +253,11 @@ document.addEventListener('click',e=>{
   if(e.target.id==='clear-cart-btn'){cart=[];renderCart()}
   if(e.target.closest('.faq-question')){const f=e.target.closest('.faq-item');document.querySelectorAll('.faq-item.is-open').forEach(o=>{if(o!==f){o.classList.remove('is-open');o.querySelector('button').setAttribute('aria-expanded','false')}});f.classList.toggle('is-open');f.querySelector('button').setAttribute('aria-expanded',f.classList.contains('is-open'))}
 });
-
+ 
 $('q').addEventListener('input',renderCatalog);
 $('ind-tabs').addEventListener('click',e=>{const b=e.target.closest('[data-ind]');if(b){indFilter=b.dataset.ind;renderIndTabs()}});
 $('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(b){categoryFilter=b.dataset.cat;renderCatalog()}});
-
+ 
 // Formulario: el error se borra al escribir y al enviar con éxito
 ['f-name','f-msg'].forEach(id=>$(id).addEventListener('input',()=>{$('err').textContent=''}));
 $('quote-form').addEventListener('submit',e=>{
@@ -267,14 +268,14 @@ $('quote-form').addEventListener('submit',e=>{
   const text=`¡Hola Naryae®! Soy ${name} y quiero cotizar:\n`+cart.map(x=>`${x.qty}x ${x.name} (${x.size}) - ${money(x.price)}`).join('\n')+`\nTotal estimado: ${money(cart.reduce((a,x)=>a+x.price,0))}\n${$('f-msg').value}`;
   window.open('https://wa.me/56934486112?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 });
-
+ 
 $('burger').addEventListener('click',()=>{const open=$('nav').classList.toggle('open');$('burger').setAttribute('aria-expanded',String(open));$('burger').setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
 $('nav').addEventListener('click',e=>{if(e.target.closest('a')){$('nav').classList.remove('open');$('burger').setAttribute('aria-expanded','false')}});
-
+ 
 /* ===== CALCULADORA ===== */
 const modal=$('size-modal'),calcType=$('calc-type'),calcValue=$('calc-value'),calcOutput=$('calc-output');
 const heightLimits=[[108,'Talla 4'],[116,'Talla 6'],[124,'Talla 8'],[132,'Talla 10'],[140,'Talla 12'],[148,'Talla 14'],[158,'Talla 16'],[166,'Talla S Adulto'],[174,'Talla M Adulto'],[182,'Talla L Adulto']];
-
+ 
 function syncCalcType(){
   const school=calcType.value==='school';
   $('calc-label').textContent=school?'Estatura de la persona (cm)':'Ancho de pecho en plano (cm)';
@@ -289,7 +290,7 @@ function closeCalc(){modal.classList.remove('open');modal.setAttribute('aria-hid
 $('close-size-modal').addEventListener('click',closeCalc);
 modal.addEventListener('click',e=>{if(e.target===modal)closeCalc()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeCalc()});
-
+ 
 calcValue.addEventListener('input',()=>{
   const v=Number(calcValue.value),school=calcType.value==='school';
   if(!calcValue.value){calcOutput.textContent='Ingresa una medida para sugerir la talla.';return}
@@ -305,9 +306,9 @@ calcValue.addEventListener('input',()=>{
   }
   calcOutput.innerHTML=`✨ Sugerencia orientativa: <strong>${label}</strong><br><small style="font-weight:400;color:var(--muted)">La talla puede variar según modelo y ajuste. Confírmala al cotizar.</small>`;
 });
-
+ 
 const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
-
+ 
 // Trébol que vuela desde el botón hasta el carrito
 function flyToCart(from,done){
   if(reduced){done();return}
@@ -318,15 +319,15 @@ function flyToCart(from,done){
   const dx=t.left+t.width/2-(a.left+a.width/2),dy=t.top+t.height/2-(a.top+a.height/2);
   el.animate([{transform:'translate(0,0) scale(1) rotate(0)',opacity:1},{transform:`translate(${dx*.5}px,${dy*.5-60}px) scale(1.4) rotate(180deg)`,opacity:1,offset:.5},{transform:`translate(${dx}px,${dy}px) scale(.4) rotate(360deg)`,opacity:.3}],{duration:750,easing:'ease-in-out'}).onfinish=()=>{el.remove();done()};
 }
-
+ 
 function countUp(el,to,suffix=''){
   if(reduced){el.textContent=to+suffix;return}
   const t0=performance.now();
   (function f(t){const k=Math.min(1,(t-t0)/1200);el.textContent=Math.round(to*(1-Math.pow(1-k,3)))+suffix;if(k<1)requestAnimationFrame(f)})(t0);
 }
-
+ 
 document.addEventListener('animationend',e=>{if(e.animationName==='pop'){e.target.classList.remove('pop');e.target.style.animationDelay=''}});
-
+ 
 function initEffects(){
   // Barra de progreso y sombra del encabezado
   const hdr=document.querySelector('header'),prog=$('progress');
@@ -347,10 +348,11 @@ function initEffects(){
   const obs=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');obs.unobserve(e.target);setTimeout(()=>e.target.classList.remove('reveal','in'),900)}),{threshold:.12});
   els.forEach((el,i)=>{el.style.setProperty('--d',(i%4)*.08+'s');el.classList.add('reveal');obs.observe(el)});
 }
-
+ 
 $('yr').textContent=new Date().getFullYear();
 renderStatic();renderCatalog();renderCart();initEffects();
 })();
 </script>
 </body>
 </html>
+ 
