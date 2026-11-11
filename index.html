@@ -44,13 +44,11 @@
   </main>
   <footer><div class="wrap"><span>© <span id="yr"></span> Confecciones Naryae® · Puerto Montt, Chile</span><span><a href="https://www.instagram.com/naryae24.02" target="_blank" rel="noopener noreferrer">@naryae24.02</a></span></div></footer>
   <div class="fab" aria-label="Accesos rápidos"><button class="top" id="top" type="button" aria-label="Volver arriba">↑</button><a class="wa" id="fab-cart" href="#carrito-seccion">🛒 Ver Carrito</a></div>
-
   <div class="modal-overlay" id="size-modal" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="modal-title"><div class="modal-content" tabindex="-1"><button class="modal-close" id="close-size-modal" type="button" aria-label="Cerrar ventana">✕</button><h3 id="modal-title" style="font-size:24px;margin:0 38px 8px 0;color:var(--deep)">Calculadora Interactiva de Tallas</h3><p style="color:var(--muted);font-size:14px;margin:0 0 16px">Selecciona el tipo de prenda e ingresa la medida principal para obtener una sugerencia orientativa.</p><div class="calc-box"><label for="calc-type" style="font-size:14px;font-weight:600;margin-bottom:4px">Tipo de prenda:</label><select id="calc-type" style="margin-bottom:14px"><option value="school">Uniforme escolar / buzo (por estatura)</option><option value="hoodie">Polerón personalizado (por ancho de pecho)</option></select><label for="calc-value" id="calc-label-text" style="font-size:14px;font-weight:600;margin-bottom:4px">Estatura de la persona (en cm):</label><input type="number" id="calc-value" inputmode="decimal" min="50" max="220" step="0.5" placeholder="Ej.: 120" aria-describedby="calc-hint"><small id="calc-hint" style="display:block;color:var(--muted);margin-top:6px">Mide la estatura en centímetros.</small><div class="calc-result" id="calc-output" aria-live="polite">Ingresa una medida para calcular tu talla.</div></div><div class="modal-note">💡 <strong>Nota:</strong> La calculadora entrega una sugerencia orientativa basada en rangos aproximados. Al cotizar por WhatsApp podemos confirmar la talla.</div></div></div>
-
   <script>
     (()=>{"use strict";
       const WA="56934486112",$=id=>document.getElementById(id),$$=selector=>Array.from(document.querySelectorAll(selector));
-      const escapeHTML=value=>String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+      const escapeHTML=value=>String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}));
       const money=amount=>"$"+new Intl.NumberFormat("es-CL").format(amount)+" CLP";
       const CATS=[
         {n:"Servicios de Envíos",i:[{name:"Despacho a Domicilio (Puerto Montt)",desc:"Envío seguro de tus prendas directo a tu casa.",sizes:["Sector Centro / Alerce / Mirasol ($2.500)","Sector La Vara / Lagunitas / Pelluco ($4.000)","Zonas Rurales / Carretera Austral ($6.000)"],prices:[2500,4000,6000]}]},
@@ -67,7 +65,7 @@
         {name:"Colegio Darío Salas",desc:"Set de uniforme escolar y buzo representativo.",sizes:["Talla 4 a 8 ($35.000)","Talla 10 a 14 ($38.000)","Talla 16 a adulto ($42.000)"],prices:[35000,38000,42000]},
         {name:"Escuela Licarayén",desc:"Uniforme y prendas escolares institucionales.",sizes:["Talla 4 a 8 ($33.000)","Talla 10 a 14 ($36.000)","Talla 16 a adulto ($40.000)"],prices:[33000,36000,40000]},
         {name:"Escuela Básica Melipulli",desc:"Buzo, polera y polar con diseño oficial del establecimiento.",sizes:["Talla 4 a 8 ($34.000)","Talla 10 a 14 ($37.000)","Talla 16 a adulto ($41.000)"],prices:[34000,37000,41000]},
-        {name:"Colegio Dm Santa María",desc:"Indumentaria completa escolar y deportiva.",sizes:["Talla 4 a 8 ($35.000)","Talla 10 a 14 ($38.000)","Talla 16 a adulto ($42.000)"],prices:[35000,38000,42000]},
+        {name:"Colegio Domingo Santa María",desc:"Indumentaria completa escolar y deportiva.",sizes:["Talla 4 a 8 ($35.000)","Talla 10 a 14 ($38.000)","Talla 16 a adulto ($42.000)"],prices:[35000,38000,42000]},
         {name:"Liceo Politécnico Mirasol",desc:"Uniformes técnicos, buzos y poleras oficiales.",sizes:["Talla 4 a 8 ($36.000)","Talla 10 a 14 ($39.000)","Talla 16 a adulto ($44.000)"],prices:[36000,39000,44000]},
         {name:"Escuela Mirasol",desc:"Conjunto escolar institucional completo.",sizes:["Talla 4 a 8 ($33.000)","Talla 10 a 14 ($36.000)","Talla 16 a adulto ($40.000)"],prices:[33000,36000,40000]},
         {name:"Colegio Creación",desc:"Set de uniforme oficial del colegio.",sizes:["Talla 4 a 8 ($37.000)","Talla 10 a 14 ($40.000)","Talla 16 a adulto ($45.000)"],prices:[37000,40000,45000]},
