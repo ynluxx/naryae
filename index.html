@@ -14,12 +14,15 @@
     *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'DM Sans',system-ui,sans-serif}a{color:inherit}.wrap{max-width:1120px;margin:auto;padding:0 20px}h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.08;margin:0}.script{font-family:'Pinyon Script',cursive;font-weight:400}:focus-visible{outline:3px solid var(--clover);outline-offset:3px}.skip-link{position:fixed;top:8px;left:8px;z-index:110;padding:12px 16px;transform:translateY(-160%);background:white;border-radius:8px}.skip-link:focus{transform:translateY(0)}
     header{position:sticky;top:0;z-index:20;background:var(--deep);color:#f1f6ef}.bar{min-height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font:34px 'Pinyon Script',cursive;color:var(--clover);text-decoration:none}nav{display:flex;gap:14px;align-items:center}nav a{text-decoration:none;padding:8px 4px}nav a:hover,nav a[aria-current=true]{border-bottom:2px solid var(--clover)}.burger{display:none}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border:0;border-radius:999px;background:var(--clover);color:#0d2415;text-decoration:none;font-weight:600;cursor:pointer;transition:transform .2s,filter .2s}.btn:hover{filter:brightness(1.07);transform:translateY(-2px)}.btn.green{background:var(--green);color:white}.btn.ghost{background:transparent;border:2px solid currentColor;color:inherit}
     .hero{background:linear-gradient(135deg,var(--deep),#1b4d2d);color:#f1f6ef;padding:50px 0}.patch{padding:48px;border:3px dashed var(--clover);border-radius:24px;background:rgba(255,255,255,.02)}.patch .script{font-size:clamp(38px,6vw,54px);color:var(--clover);display:block}.patch h1{font-size:clamp(44px,8vw,82px);max-width:14ch}.patch p{max-width:55ch;color:#d4e2d2}.cta,.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center}section{padding:64px 0}h2{font-size:clamp(32px,5vw,52px)}.lead{color:var(--muted);max-width:65ch;margin:12px 0 24px}.alt{background:white}.grid,.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card,.review-card,.faq-item,.cart-drawer{background:white;border:2px dashed var(--line);border-radius:16px;padding:20px}.card{display:flex;flex-direction:column;gap:9px}.card p,.note{color:var(--muted);margin:0}.card label{font-size:14px;font-weight:600}.card select,input,textarea{width:100%;padding:12px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit;min-height:48px}.checkbox-label{display:flex!important;gap:8px;align-items:center}.checkbox-label input{width:22px;min-height:22px}.price-tag{font-weight:bold;color:var(--green)}.price-disclaimer{background:var(--soft);padding:14px;border-left:4px solid var(--green);border-radius:8px}.tabs{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:9px 16px;border:2px solid var(--green);border-radius:30px;background:transparent;color:var(--ink);cursor:pointer;font:inherit}.chip[aria-pressed=true],.chip:hover{background:var(--green);color:white}.search{flex:1;min-width:220px}.cart-item{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}.cart-item button{border:0;background:none;color:#b3261e;cursor:pointer}.cart-total{display:flex;justify-content:space-between;gap:10px;font-weight:bold}.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.faq-list{display:flex;flex-direction:column;gap:14px;margin-top:24px;max-width:800px}.faq-item{padding:0;overflow:hidden}.faq-question{width:100%;padding:16px;text-align:left;background:white;border:0;font:600 17px 'DM Sans',sans-serif;cursor:pointer}.faq-answer{display:none;padding:0 16px;color:var(--muted)}.faq-item.is-open .faq-answer{display:block}.review-card{display:flex;flex-direction:column;gap:8px}.review-card p{margin:0;color:var(--muted)}.review-stars{color:#f5b400;font-size:21px;letter-spacing:2px}.review-author{display:block;margin-top:auto;font-weight:700;font-size:14px}.about{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center}.about-text p{margin:0 0 16px;color:var(--muted);font-size:16px}.quote{border:3px dashed var(--clover);border-radius:24px;padding:34px 28px;text-align:center;background:rgba(92,203,71,.04)}.quote .script{font-size:46px;color:var(--green);line-height:1.1}.fab{position:fixed;bottom:16px;right:16px;z-index:30}.fab a{background:#25d366;padding:14px 20px;border-radius:30px;text-decoration:none;color:#08331b;font-weight:600}footer{background:var(--deep);color:#d4e2d2;padding:30px}.modal-overlay{position:fixed;inset:0;background:#0009;z-index:50;display:none;place-items:center;padding:16px}.modal-overlay.open{display:grid}.modal-content{background:white;border-radius:18px;padding:24px;max-width:600px;width:100%;max-height:90vh;overflow:auto;box-shadow:0 20px 40px #0003}.modal-close{float:right;background:none;border:0;font-size:22px;cursor:pointer}.calc-box{padding:16px;background:var(--soft);border-radius:12px}.calc-result{margin-top:12px;background:white;padding:14px;text-align:center;border-radius:8px;min-height:56px;color:var(--green);font-weight:700}.modal-note{background:white;padding:12px;border:1px solid var(--line);border-radius:8px;color:var(--muted);font-size:13px}
+    .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--deep);color:#f1f6ef;padding:14px 24px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:100;font-weight:600;display:flex;align-items:center;gap:10px;opacity:0;transition:transform .3s ease,opacity .3s ease;pointer-events:none}
+    .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+    .toast span{color:var(--clover);font-size:20px}
     @media(max-width:900px){.burger{display:block;background:transparent;color:white;border:1px solid white;padding:10px;border-radius:8px;min-height:44px}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--deep);padding:18px;flex-direction:column;align-items:stretch}nav.open{display:flex}}@media(max-width:700px){.contact,.about{grid-template-columns:1fr}.patch{padding:28px 20px}.cta .btn{width:100%}section{padding:48px 0}.search{min-width:100%}}
   </style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
-<header><div class="wrap bar"><a class="logo" href="#inicio" aria-label="Naryae®, inicio">Naryae®</a><button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">Menú</button><nav id="nav" aria-label="Principal"><a href="#catalogo">Catálogo</a><a href="#colegios">Uniformes Completos</a><a href="#prendas-sueltas">Prendas Individuales</a><a href="#carrito-seccion">Mi Carrito (<span data-cart-count>0</span>)</a><a href="#resenas">Reseñas</a><a href="#faq">Preguntas</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav></div></header>
+<header><div class="wrap bar"><a class="logo script" href="#inicio" aria-label="Naryae®, inicio">Naryae®</a><button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">Menú</button><nav id="nav" aria-label="Principal"><a href="#catalogo">Catálogo</a><a href="#colegios">Uniformes Completos</a><a href="#prendas-sueltas">Prendas Individuales</a><a href="#carrito-seccion">Mi Carrito (<span data-cart-count>0</span>)</a><a href="#resenas">Reseñas</a><a href="#faq">Preguntas</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav></div></header>
 <main id="contenido"><div class="hero" id="inicio"><div class="wrap patch"><span class="script">Style is an art</span><h1>Confeccionamos con calidad</h1><p>Uniformes escolares completos o prendas individuales, ropa personalizada, delantales y más. Arma tu pedido y cotiza por WhatsApp.</p><div class="cta"><a class="btn" href="#catalogo">Ver catálogo general</a><a class="btn ghost" href="#prendas-sueltas">Prendas sueltas</a><a class="btn ghost" href="#carrito-seccion">Ir al carrito</a></div></div></div>
 <section id="catalogo"><div class="wrap"><h2>Catálogo Interactivo</h2><p class="lead">Explora arreglos, despachos, ropa corporativa y personalizada, accesorios, delantales, hogar y regalos.</p><button class="btn ghost" id="open-size-guide" type="button" style="margin-bottom:18px;color:var(--green)">📏 Calculadora por Medida</button><p class="price-disclaimer"><strong>Importante:</strong> los precios son referenciales. El valor final se confirma por WhatsApp y puede variar según colegio, talla, materiales, diseño y disponibilidad.</p><div class="tools"><div id="tabs" class="tabs" role="group" aria-label="Filtrar por categoría"></div><div class="search"><input id="q" type="search" placeholder="Buscar: arreglo, despacho, polar…" aria-label="Buscar en el catálogo"></div></div><div class="grid" id="grid" aria-live="polite"></div></div></section>
 <section id="colegios" class="alt"><div class="wrap"><h2>Uniformes por Colegio y Escuela (Set Completo)</h2><p class="lead">Encuentra el set institucional de cada establecimiento y selecciona la talla según el ancho de pecho en plano.</p><p class="price-disclaimer">Precios referenciales; el valor final se confirma por WhatsApp.</p><div class="grid" id="schools-grid"></div></div></section>
@@ -30,21 +33,196 @@
 <section id="nosotros" class="alt"><div class="wrap about"><div class="about-text"><h2>Quiénes somos</h2><p class="lead">Confecciones Naryae® nació el <strong>14 de marzo del 2020</strong> en Puerto Montt, y desde ese mismo instante no hemos parado.</p><p>Comenzamos con un sueño y una máquina de coser, impulsados por la pasión de entregar prendas con un estándar superior. A lo largo de los años nos hemos consolidado como un taller de confianza para familias, colegios y empresas de la región.</p><p>Cada uniforme escolar, arreglo de ropa o polerón personalizado lleva impregnado nuestro compromiso con la durabilidad, el detalle y la cercanía con cada cliente. ¡Gracias por hacernos parte de su día a día!</p></div><div class="quote"><span class="script">Style is an art</span><p style="margin:10px 0 0;color:var(--muted)">Nos dedicamos a confeccionar con calidad desde 2020.</p></div></div></section>
 <section id="contacto"><div class="wrap"><h2>¿Tienes alguna duda o consulta?</h2><p class="lead">Escríbenos directamente si necesitas algo fuera de lo estándar.</p><p><strong>WhatsApp:</strong> <a href="tel:+56934486112">+56 9 3448 6112</a><br><strong>Correo:</strong> <a href="mailto:naryae142020@gmail.com">naryae142020@gmail.com</a><br><strong>Ubicación:</strong> Puerto Montt, Chile</p><a class="btn" href="https://wa.me/56934486112?text=Hola%20Naryae%2C%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a></div></section></main>
 <footer><div class="wrap">© <span id="yr"></span> Confecciones Naryae® · Puerto Montt, Chile · <a href="https://www.instagram.com/naryae24.02" target="_blank" rel="noopener noreferrer">@naryae24.02</a></div></footer><div class="fab"><a href="#carrito-seccion">🛒 Ver Carrito</a></div>
+ 
+<div class="toast" id="toast" role="status" aria-live="polite"><span>✓</span> <span id="toast-msg">¡Producto agregado al carrito!</span></div>
+ 
 <div class="modal-overlay" id="size-modal" aria-hidden="true"><div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="close-size-modal" type="button" aria-label="Cerrar calculadora">✕</button><h3 id="modal-title" style="margin-bottom:8px;color:var(--deep)">Calculadora de tallas por medida</h3><p style="color:var(--muted);font-size:14px">Elige qué medida tienes disponible. Para la medida de pecho, mide de axila a axila una prenda cómoda extendida en una superficie plana.</p><div class="calc-box"><label for="calc-type">Tipo de medida</label><select id="calc-type"><option value="chest">Ancho de pecho de una prenda (en plano)</option><option value="school">Estatura de la persona</option></select><label id="calc-label" for="calc-value">Ancho de pecho en plano (cm)</label><input id="calc-value" type="number" inputmode="decimal" min="25" max="80" step="0.5" placeholder="Ej.: 36"><small id="calc-hint" style="color:var(--muted)">Ancho medido de lado a lado, no contorno.</small><div class="calc-result" id="calc-output" aria-live="polite">Ingresa una medida para sugerir la talla.</div></div><p class="modal-note" style="margin-top:14px">💡 Sugerencia orientativa: el ajuste final puede variar según el modelo y la holgura preferida. Confirma la talla al cotizar por WhatsApp.</p></div></div>
+ 
 <script>
-(()=>{'use strict';const $=id=>document.getElementById(id),money=n=>'$'+new Intl.NumberFormat('es-CL').format(n)+' CLP',esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const schoolSizes=['Talla 4 (32 cm) - $26.000','Talla 6 (34 cm) - $28.000','Talla 8 (36 cm) - $30.000','Talla 10 (38 cm) - $33.000','Talla 12 (41 cm) - $35.000','Talla 14 (44 cm) - $37.000','Talla 16 (47 cm) - $40.000','Talla S Adulto (50 cm) - $42.000','Talla M Adulto (53 cm) - $44.000','Talla L Adulto (56 cm) - $46.000','Talla XL / XXL (60+ cm) - $49.000'],schoolPrices=[26000,28000,30000,33000,35000,37000,40000,42000,44000,46000,49000],topSizes=['Talla 4 (32 cm) - $8.500','Talla 6 (34 cm) - $9.500','Talla 8 (36 cm) - $10.500','Talla 10 (38 cm) - $12.000','Talla 12 (41 cm) - $13.500','Talla 14 (44 cm) - $15.000','Talla 16 (47 cm) - $16.500','Talla S Adulto (50 cm) - $18.500','Talla M Adulto (53 cm) - $20.000','Talla L Adulto (56 cm) - $21.500','Talla XL / XXL (60+ cm) - $24.000'],topPrices=[8500,9500,10500,12000,13500,15000,16500,18500,20000,21500,24000],bottomSizes=['Talla 4 - $9.500','Talla 6 - $10.500','Talla 8 - $11.500','Talla 10 - $13.000','Talla 12 - $14.500','Talla 14 - $16.000','Talla 16 - $17.500','Talla S Adulto - $19.500','Talla M Adulto - $21.000','Talla L Adulto - $22.500','Talla XL / XXL - $25.000'],bottomPrices=[9500,10500,11500,13000,14500,16000,17500,19500,21000,22500,25000];
-const individual=[['Polera Escolar Piqué (Manga corta/larga)','Polera oficial institucional de algodón o piqué resistente.',topSizes,topPrices,3000,'Agregar insignia o bordado'],['Camisa / Blusa Escolar','Camisa o blusa blanca tradicional para uniforme formal.',topSizes,topPrices],['Pantalón de Casimir / Tela Escolar','Pantalón formal para uniforme diario.',bottomSizes,bottomPrices],['Falda / Pollerón Escolar','Falda institucional plisada según modelo del colegio.',bottomSizes,bottomPrices],['Pantalón de Educación Física (Buzo)','Pantalón deportivo cómodo y durable.',bottomSizes,bottomPrices],['Polerón de Educación Física o Institucional','Polerón de buzo escolar con diseño del establecimiento.',topSizes,topPrices,3000,'Agregar nombre o apellido bordado']];
-const categories=[['Servicios de Envíos',[['Despacho a Domicilio (Puerto Montt)','Envío seguro de tus prendas directo a tu casa.',['Sector Centro / Alerce / Mirasol ($2.500)','Sector La Vara / Lagunitas / Pelluco ($4.000)','Zonas Rurales / Carretera Austral ($6.000)'],[2500,4000,6000]]]],['Arreglos de ropa',[['Dobladillo de Pantalón','Ajuste de largo profesional para cualquier tipo de tela.',['Estándar ($4.000)'],[4000]],['Cambio de Cierre','Instalación de cierre nuevo reforzado en chaquetas o buzos.',['Corto / Estándar ($6.000)','Chaquetas Largas / Parkas ($8.000)'],[6000]],['Entallado / Ajuste general','Modificación de ancho en polerones, camisas o vestidos.',['Ajuste Estándar ($7.000)'],[7000]]]],['Ropa corporativa',[['Camisas y Blusas Institucionales','Bordadas con el logo de tu empresa o pyme.',['Talla S ($18.000)','Talla M ($18.000)','Talla L ($18.000)','Talla XL ($21.000)','Talla XXL ($21.000)'],[18000,18000,18000,21000,21000]],['Jockeys y Gorros Bordados','Estructurados, ideales para trabajo o merchandising.',['Talla Única Ajustable ($6.500)'],[6500]],['Polar Corporativo','Polerón polar con cierre completo y logo bordado.',['Talla S ($28.000)','Talla M ($28.000)','Talla L ($28.000)','Talla XL ($32.000)','Talla XXL ($32.000)'],[28000,28000,28000,32000,32000]]]],['Ropa personalizada',[['Polerones personalizados','Modelo Hoodie / Canguro con tu diseño o estampado.',['Talla 4 (32 cm) - $24.000','Talla 6 (34 cm) - $24.000','Talla 8 (36 cm) - $24.000','Talla 10 (38 cm) - $26.000','Talla 12 (41 cm) - $26.000','Talla 14 (44 cm) - $28.000','Talla 16 (47 cm) - $28.000','Talla S (50 cm) - $30.000','Talla M (53 cm) - $30.000','Talla L (56 cm) - $30.000','Talla XL/XXL (60+ cm) - $34.000'],[24000,24000,24000,26000,26000,28000,28000,30000,30000,30000,34000],3000,'Agregar personalización especial'],['Polerones tipo chaqueta','Polerón con cierre frontal completo.',['Talla 4 (32 cm) - $22.000','Talla 6 (34 cm) - $22.000','Talla 8 (36 cm) - $22.000','Talla 10 (38 cm) - $24.000','Talla 12 (41 cm) - $24.000','Talla 14 (44 cm) - $26.000','Talla 16 (47 cm) - $26.000','Talla S (50 cm) - $25.000','Talla M (53 cm) - $25.000','Talla L (56 cm) - $25.000','Talla XL/XXL (60+ cm) - $29.000'],[22000,22000,22000,24000,24000,26000,26000,25000,25000,25000,29000]],['Prendas con bordado','Polerones o poleras con bordados personalizados.',['Talla 8 (36 cm) - $18.000','Talla 10 (38 cm) - $18.000','Talla 12 (41 cm) - $18.000','Talla 14 (44 cm) - $18.000','Talla 16 (47 cm) - $18.000','Talla S (50 cm) - $18.000','Talla M (53 cm) - $18.000','Talla L (56 cm) - $18.000','Talla XL/XXL (60+ cm) - $21.000'],[18000,18000,18000,18000,18000,18000,18000,18000,21000]]]],['Accesorios escolares',[['Delantales Escolares / Cotonas','Para párvulos o jardín, con bordado de nombre.',['Talla 2 ($12.000)','Talla 4 ($12.000)','Talla 6 ($12.000)','Talla 8 ($14.000)','Talla 10 ($14.000)','Talla 12 ($14.000)','Talla 14 ($16.000)'],[12000,12000,12000,14000,14000,14000,16000]],['Bolsas Ecológicas / Tote Bags','De género resistente, estampadas a tu gusto.',['Estándar 35 x 40 cm ($3.500)'],[3500]],['Estuches de Tela','Con cierre reforzado y forro interior.',['Estándar 22 x 12 cm ($4.000)'],[4000]]]],['Delantales y gastronomía',[['Delantales de cocina / Pecheras','Para cocina, jardín o uso profesional.',['Infantil 4-8 ($7.000)','Juvenil 10-16 ($8.500)','Adulto S/M ($10.000)','Adulto L/XL ($12.000)'],[7000,8500,10000,12000],3000,'Agregar bordado o nombre'],['Gorritos chef y cofias','Gorros ajustables gastronómicos.',['Infantil ($5.000)','Adulto estándar ($6.000)'],[5000,6000]]]],['Hogar y regalos',[['Tazas personalizadas','Diseños personalizados en sublimación.',['Cerámica 11 oz ($3.500)','Mágica térmica 11 oz ($6.000)'],[3500,6000]],['Cojines decorativos / navideños','Incluyen relleno suave y funda lavable.',['40 x 40 cm ($8.000)','50 x 50 cm ($10.000)'],[8000,10000]],['Fundas de Almohada Personalizadas','Con fotos, frases o diseños a elección.',['50 x 70 cm ($6.500)'],[6500]]]]];
-const schools=['Liceo Las Quemas','Escuela 10 Angelmó','Colegio Darío Salas','Escuela Licarayén','Escuela Básica Melipulli','Colegio Domingo Santa María','Liceo Politécnico Mirasol','Escuela Mirasol','Colegio Creación','Escuela Rotario Bravo','Escuela Pillalinkan','Escuela Lagunitas','Colegio María Auxiliadora'];let cart=[];try{const saved=JSON.parse(localStorage.getItem('naryae_cart')||'[]');if(Array.isArray(saved))cart=saved.filter(x=>x&&typeof x.name==='string'&&typeof x.size==='string'&&Number.isFinite(x.qty)&&Number.isFinite(x.price)&&x.qty>0&&x.price>=0)}catch{}
-function card(name,desc,sizes,prices,prefix='',custom=0,customLabel='Agregar personalización'){const id='c'+Math.random().toString(36).slice(2),opts=sizes.map((s,i)=>`<option value="${i}">${esc(s)}</option>`).join('');return `<article class="card" data-name="${esc(prefix+name)}" data-prices='${JSON.stringify(prices)}' data-custom="${custom}"><h3>${esc(name)}</h3><p>${esc(desc)}</p><label for="${id}">Selecciona talla / opción</label><select class="size" id="${id}">${opts}</select>${custom?`<label class="checkbox-label"><input class="custom" type="checkbox"> ${esc(customLabel)} (+${money(custom)})</label>`:''}<label>Cantidad<select class="qty">${Array.from({length:10},(_,i)=>`<option value="${i+1}">${i+1}</option>`)}</select></label><div class="price-tag"></div><button class="btn green add" type="button">Agregar al carrito</button></article>`}
-let categoryFilter='Todo';function render(){const q=$('q').value.toLocaleLowerCase('es-CL').trim(),shown=categories.flatMap(([cat,items])=>items.map(x=>({cat,x}))).filter(({cat,x})=>(categoryFilter==='Todo'||cat===categoryFilter)&&(!q||`${cat} ${x[0]} ${x[1]}`.toLocaleLowerCase('es-CL').includes(q)));$('tabs').innerHTML=['Todo',...categories.map(x=>x[0])].map(c=>`<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c===categoryFilter}">${esc(c)}</button>`).join('');$('grid').innerHTML=shown.map(({x})=>card(x[0],x[1],x[2],x[3],'',x[4]||0,x[5])).join('')||'<p class="note">No encontramos productos con esa búsqueda.</p>';$('schools-grid').innerHTML=schools.map(s=>card(s,'Uniforme institucional completo (buzo, polera y prendas oficiales).',schoolSizes,schoolPrices,'Uniforme ',3000,'Agregar bordado institucional o nombre')).join('');$('individual-grid').innerHTML=individual.map(x=>card(x[0],x[1],x[2],x[3],'Prenda Suelta: ',x[4]||0,x[5])).join('');document.querySelectorAll('.card').forEach(updatePrice)}function updatePrice(e){const c=e.matches('.card')?e:e.closest('.card'),s=c.querySelector('.size'),p=JSON.parse(c.dataset.prices),v=(p[+s.value]??p[0]??0)+(c.querySelector('.custom')?.checked?+c.dataset.custom:0);c.querySelector('.price-tag').textContent=money(v*(+c.querySelector('.qty').value||1))}
-function renderCart(){try{localStorage.setItem('naryae_cart',JSON.stringify(cart))}catch{}document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=cart.reduce((a,i)=>a+i.qty,0));$('cart-items').innerHTML=cart.map((x,i)=>`<li class="cart-item"><span>${x.qty}x ${esc(x.name)}<br><small>${esc(x.size)}${x.customLabel?` · ${esc(x.customLabel)}`:''}</small></span><span>${money(x.price)} <button type="button" data-remove="${i}" aria-label="Eliminar ${esc(x.name)}">✕</button></span></li>`).join('')||'<li>Tu carrito está vacío. Elige productos del catálogo.</li>';$('cart-total-price').textContent=money(cart.reduce((a,x)=>a+x.price,0))}
-document.addEventListener('change',e=>{if(e.target.matches('.size,.qty,.custom'))updatePrice(e.target)});document.addEventListener('click',e=>{const b=e.target.closest('.add');if(b){const c=b.closest('.card'),s=c.querySelector('.size'),p=JSON.parse(c.dataset.prices),qty=+c.querySelector('.qty').value,custom=c.querySelector('.custom')?.checked||false,price=((p[+s.value]??p[0]??0)+(custom?+c.dataset.custom:0))*qty;cart.push({name:c.dataset.name,size:s.selectedOptions[0].text,qty,price,customLabel:custom?c.querySelector('.custom').parentElement.textContent.trim().replace(/\s*\(\+.*\)$/,''):''});renderCart();return}if(e.target.dataset.remove!==undefined){cart.splice(+e.target.dataset.remove,1);renderCart()}if(e.target.id==='clear-cart-btn'){cart=[];renderCart()}if(e.target.closest('.faq-question')){const f=e.target.closest('.faq-item');f.classList.toggle('is-open');f.querySelector('button').setAttribute('aria-expanded',f.classList.contains('is-open'))}});
-$('q').addEventListener('input',render);$('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(b){categoryFilter=b.dataset.cat;render()}});$('quote-form').addEventListener('submit',e=>{e.preventDefault();const name=$('f-name').value.trim();if(!name||!cart.length){$('err').textContent=!name?'Escribe tu nombre.':'Tu carrito está vacío.';return}const text=`¡Hola Naryae®! Soy ${name} y quiero cotizar:\n`+cart.map(x=>`${x.qty}x ${x.name} (${x.size}) - ${money(x.price)}`).join('\n')+`\nTotal estimado: ${money(cart.reduce((a,x)=>a+x.price,0))}\n${$('f-msg').value}`;window.open('https://wa.me/56934486112?text='+encodeURIComponent(text),'_blank','noopener,noreferrer')});
-$('burger').addEventListener('click',()=>{const open=$('nav').classList.toggle('open');$('burger').setAttribute('aria-expanded',String(open));$('burger').setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});$('nav').addEventListener('click',e=>{if(e.target.closest('a')){$('nav').classList.remove('open');$('burger').setAttribute('aria-expanded','false')}});
-const modal=$('size-modal'),calcType=$('calc-type'),calcValue=$('calc-value'),calcOutput=$('calc-output');function syncCalcType(){const school=calcType.value==='school';$('calc-label').textContent=school?'Estatura de la persona (cm)':'Ancho de pecho en plano (cm)';$('calc-hint').textContent=school?'Mide la estatura de la persona sin zapatos.':'Ancho de lado a lado de una prenda cómoda, no el contorno.';calcValue.min=school?'80':'25';calcValue.max=school?'210':'80';calcValue.step=school?'1':'0.5';calcValue.placeholder=school?'Ej.: 128':'Ej.: 36';calcValue.value='';calcOutput.textContent='Ingresa una medida para sugerir la talla.'}calcType.addEventListener('change',syncCalcType);$('open-size-guide').addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('close-size-modal').focus()});function closeCalc(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';$('open-size-guide').focus()}$('close-size-modal').addEventListener('click',closeCalc);modal.addEventListener('click',e=>{if(e.target===modal)closeCalc()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeCalc()});calcValue.addEventListener('input',()=>{const v=Number(calcValue.value),school=calcType.value==='school';if(!calcValue.value){calcOutput.textContent='Ingresa una medida para sugerir la talla.';return}if(!Number.isFinite(v)||v<Number(calcValue.min)||v>Number(calcValue.max)){calcOutput.textContent=`Ingresa una medida válida entre ${calcValue.min} y ${calcValue.max} cm.`;return}let label;if(school){if(v<108)label='Talla 4';else if(v<116)label='Talla 6';else if(v<124)label='Talla 8';else if(v<132)label='Talla 10';else if(v<140)label='Talla 12';else if(v<148)label='Talla 14';else if(v<158)label='Talla 16';else if(v<166)label='Talla S Adulto';else if(v<174)label='Talla M Adulto';else if(v<182)label='Talla L Adulto';else label='Talla XL / XXL'}else if(v<32)label='Talla 4 / 6';else if(v<35)label='Talla 8';else if(v<38)label='Talla 10';else if(v<41)label='Talla 12';else if(v<44)label='Talla 14';else if(v<47)label='Talla 16';else if(v<50)label='Talla S Adulto';else if(v<53)label='Talla M Adulto';else if(v<57)label='Talla L Adulto';else label='Talla XL / XXL';calcOutput.innerHTML=`✨ Sugerencia orientativa: <strong>${label}</strong><br><small style="font-weight:400;color:var(--muted)">La talla puede variar según modelo y ajuste. Confírmala al cotizar.</small>`});
-document.getElementById('yr').textContent=new Date().getFullYear();render();renderCart()})();
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const fmt=n=>'$'+new Intl.NumberFormat('es-CL').format(n);
+const money=n=>fmt(n)+' CLP';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ 
+/* ===== DATOS =====
+   Cada precio se escribe UNA sola vez, como [etiqueta, precio].
+   El texto del menú ("Talla 4 (32 cm) - $8.500") se genera solo. */
+ 
+// Tabla única de tallas: nombre y ancho de pecho en plano (cm). La calculadora usa esta misma tabla.
+const SZ=[['Talla 4',32],['Talla 6',34],['Talla 8',36],['Talla 10',38],['Talla 12',41],['Talla 14',44],['Talla 16',47],['Talla S Adulto',50],['Talla M Adulto',53],['Talla L Adulto',56],['Talla XL / XXL',60]];
+// S(precios, conCm, desde): asocia una lista de precios a la tabla de tallas
+const S=(prices,cm=true,from=0)=>SZ.slice(from,from+prices.length).map(([n,c],i)=>[cm?`${n} (${c}${c===60?'+':''} cm)`:n,prices[i]]);
+ 
+const schoolSizes=S([26000,28000,30000,33000,35000,37000,40000,42000,44000,46000,49000]);
+const topSizes=S([8500,9500,10500,12000,13500,15000,16500,18500,20000,21500,24000]);
+const bottomSizes=S([9500,10500,11500,13000,14500,16000,17500,19500,21000,22500,25000],false);
+ 
+// [nombre, descripción, opciones, recargo personalización, texto personalización]
+const individual=[
+['Polera Escolar Piqué (Manga corta/larga)','Polera oficial institucional de algodón o piqué resistente.',topSizes,3000,'Agregar insignia o bordado'],
+['Camisa / Blusa Escolar','Camisa o blusa blanca tradicional para uniforme formal.',topSizes],
+['Pantalón de Casimir / Tela Escolar','Pantalón formal para uniforme diario.',bottomSizes],
+['Falda / Pollerón Escolar','Falda institucional plisada según modelo del colegio.',bottomSizes],
+['Pantalón de Educación Física (Buzo)','Pantalón deportivo cómodo y durable.',bottomSizes],
+['Polerón de Educación Física o Institucional','Polerón de buzo escolar con diseño del establecimiento.',topSizes,3000,'Agregar nombre o apellido bordado']];
+ 
+const categories=[
+['Servicios de Envíos',[
+ ['Despacho a Domicilio (Puerto Montt)','Envío seguro de tus prendas directo a tu casa.',[['Sector Centro / Alerce / Mirasol',2500],['Sector La Vara / Lagunitas / Pelluco',4000],['Zonas Rurales / Carretera Austral',6000]]]]],
+['Arreglos de ropa',[
+ ['Dobladillo de Pantalón','Ajuste de largo profesional para cualquier tipo de tela.',[['Estándar',4000]]],
+ ['Cambio de Cierre','Instalación de cierre nuevo reforzado en chaquetas o buzos.',[['Corto / Estándar',6000],['Chaquetas Largas / Parkas',8000]]],
+ ['Entallado / Ajuste general','Modificación de ancho en polerones, camisas o vestidos.',[['Ajuste Estándar',7000]]]]],
+['Ropa corporativa',[
+ ['Camisas y Blusas Institucionales','Bordadas con el logo de tu empresa o pyme.',[['Talla S',18000],['Talla M',18000],['Talla L',18000],['Talla XL',21000],['Talla XXL',21000]]],
+ ['Jockeys y Gorros Bordados','Estructurados, ideales para trabajo o merchandising.',[['Talla Única Ajustable',6500]]],
+ ['Polar Corporativo','Polerón polar con cierre completo y logo bordado.',[['Talla S',28000],['Talla M',28000],['Talla L',28000],['Talla XL',32000],['Talla XXL',32000]]]]],
+['Ropa personalizada',[
+ ['Polerones personalizados','Modelo Hoodie / Canguro con tu diseño o estampado.',S([24000,24000,24000,26000,26000,28000,28000,30000,30000,30000,34000]),3000,'Agregar personalización especial'],
+ // OJO: adultos S–L corregidos a $28.000 (antes $25.000, menos que las tallas 14–16 de niño). Verifica el precio real.
+ ['Polerones tipo chaqueta','Polerón con cierre frontal completo.',S([22000,22000,22000,24000,24000,26000,26000,28000,28000,28000,32000])],
+ ['Prendas con bordado','Polerones o poleras con bordados personalizados.',S([18000,18000,18000,18000,18000,18000,18000,18000,21000],true,2)]]],
+['Accesorios escolares',[
+ ['Delantales Escolares / Cotonas','Para párvulos o jardín, con bordado de nombre.',[['Talla 2',12000],['Talla 4',12000],['Talla 6',12000],['Talla 8',14000],['Talla 10',14000],['Talla 12',14000],['Talla 14',16000]]],
+ ['Bolsas Ecológicas / Tote Bags','De género resistente, estampadas a tu gusto.',[['Estándar 35 x 40 cm',3500]]],
+ ['Estuches de Tela','Con cierre reforzado y forro interior.',[['Estándar 22 x 12 cm',4000]]]]],
+['Delantales y gastronomía',[
+ ['Delantales de cocina / Pecheras','Para cocina, jardín o uso profesional.',[['Infantil 4-8',7000],['Juvenil 10-16',8500],['Adulto S/M',10000],['Adulto L/XL',12000]],3000,'Agregar bordado o nombre'],
+ ['Gorritos chef y cofias','Gorros ajustables gastronómicos.',[['Infantil',5000],['Adulto estándar',6000]]]]],
+['Hogar y regalos',[
+ ['Tazas personalizadas','Diseños personalizados en sublimación.',[['Cerámica 11 oz',3500],['Mágica térmica 11 oz',6000]]],
+ ['Cojines decorativos / navideños','Incluyen relleno suave y funda lavable.',[['40 x 40 cm',8000],['50 x 50 cm',10000]]],
+ ['Fundas de Almohada Personalizadas','Con fotos, frases o diseños a elección.',[['50 x 70 cm',6500]]]]]];
+ 
+const schools=['Liceo Las Quemas','Escuela 10 Angelmó','Colegio Darío Salas','Escuela Licarayén','Escuela Básica Melipulli','Colegio Domingo Santa María','Liceo Politécnico Mirasol','Escuela Mirasol','Colegio Creación','Escuela Rotario Bravo','Escuela Pillalinkan','Escuela Lagunitas','Colegio María Auxiliadora'];
+ 
+/* ===== CARRITO ===== */
+let cart=[];
+try{const saved=JSON.parse(localStorage.getItem('naryae_cart')||'[]');if(Array.isArray(saved))cart=saved.filter(x=>x&&typeof x.name==='string'&&typeof x.size==='string'&&Number.isFinite(x.qty)&&Number.isFinite(x.price)&&x.qty>0&&x.price>=0)}catch{}
+ 
+/* ===== TARJETAS ===== */
+function card(name,desc,options,prefix='',custom=0,customLabel='Agregar personalización'){
+  const id='c'+Math.random().toString(36).slice(2);
+  const opts=options.map(([label,price],i)=>`<option value="${i}">${esc(label)} - ${fmt(price)}</option>`).join('');
+  const qtys=Array.from({length:10},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');
+  return `<article class="card" data-name="${esc(prefix+name)}" data-prices='${JSON.stringify(options.map(o=>o[1]))}' data-custom="${custom}"><h3>${esc(name)}</h3><p>${esc(desc)}</p><label for="${id}">Selecciona talla / opción</label><select class="size" id="${id}">${opts}</select>${custom?`<label class="checkbox-label"><input class="custom" type="checkbox"> ${esc(customLabel)} (+${money(custom)})</label>`:''}<label>Cantidad<select class="qty">${qtys}</select></label><div class="price-tag"></div><button class="btn green add" type="button">Agregar al carrito</button></article>`;
+}
+ 
+function updatePrice(e){
+  const c=e.matches('.card')?e:e.closest('.card'),s=c.querySelector('.size'),p=JSON.parse(c.dataset.prices);
+  const v=(p[+s.value]??p[0]??0)+(c.querySelector('.custom')?.checked?+c.dataset.custom:0);
+  c.querySelector('.price-tag').textContent=money(v*(+c.querySelector('.qty').value||1));
+}
+ 
+// Colegios y prendas sueltas: se dibujan UNA sola vez (así no pierden la talla elegida al filtrar el catálogo)
+function renderStatic(){
+  $('schools-grid').innerHTML=schools.map(s=>card(s,'Uniforme institucional completo (buzo, polera y prendas oficiales).',schoolSizes,'Uniforme ',3000,'Agregar bordado institucional o nombre')).join('');
+  $('individual-grid').innerHTML=individual.map(x=>card(x[0],x[1],x[2],'Prenda Suelta: ',x[3]||0,x[4])).join('');
+  document.querySelectorAll('#schools-grid .card,#individual-grid .card').forEach(updatePrice);
+}
+ 
+// Catálogo: se redibuja al filtrar/buscar, pero recuerda talla, cantidad y extras ya elegidos
+let categoryFilter='Todo';
+function renderCatalog(){
+  const q=$('q').value.toLocaleLowerCase('es-CL').trim();
+  const saved={};
+  $('grid').querySelectorAll('.card').forEach(c=>{saved[c.dataset.name]={size:c.querySelector('.size').value,qty:c.querySelector('.qty').value,custom:c.querySelector('.custom')?.checked||false}});
+  const shown=categories.flatMap(([cat,items])=>items.map(x=>({cat,x}))).filter(({cat,x})=>(categoryFilter==='Todo'||cat===categoryFilter)&&(!q||`${cat} ${x[0]} ${x[1]}`.toLocaleLowerCase('es-CL').includes(q)));
+  $('tabs').innerHTML=['Todo',...categories.map(x=>x[0])].map(c=>`<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c===categoryFilter}">${esc(c)}</button>`).join('');
+  $('grid').innerHTML=shown.map(({x})=>card(x[0],x[1],x[2],'',x[3]||0,x[4])).join('')||'<p class="note">No encontramos productos con esa búsqueda.</p>';
+  $('grid').querySelectorAll('.card').forEach(c=>{
+    const s=saved[c.dataset.name];
+    if(s){c.querySelector('.size').value=s.size;c.querySelector('.qty').value=s.qty;const k=c.querySelector('.custom');if(k)k.checked=s.custom}
+    updatePrice(c);
+  });
+}
+ 
+function renderCart(){
+  try{localStorage.setItem('naryae_cart',JSON.stringify(cart))}catch{}
+  document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=cart.reduce((a,i)=>a+i.qty,0));
+  $('cart-items').innerHTML=cart.map((x,i)=>`<li class="cart-item"><span>${x.qty}x ${esc(x.name)}<br><small>${esc(x.size)}${x.customLabel?` · ${esc(x.customLabel)}`:''}</small></span><span>${money(x.price)} <button type="button" data-remove="${i}" aria-label="Eliminar ${esc(x.name)}">✕</button></span></li>`).join('')||'<li>Tu carrito está vacío. Elige productos del catálogo.</li>';
+  $('cart-total-price').textContent=money(cart.reduce((a,x)=>a+x.price,0));
+}
+ 
+let toastTimeout;
+function showToast(message){const toast=$('toast');$('toast-msg').textContent=message;toast.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.classList.remove('show'),2500)}
+ 
+/* ===== EVENTOS ===== */
+document.addEventListener('change',e=>{if(e.target.matches('.size,.qty,.custom'))updatePrice(e.target)});
+document.addEventListener('click',e=>{
+  const b=e.target.closest('.add');
+  if(b){
+    const c=b.closest('.card'),s=c.querySelector('.size'),p=JSON.parse(c.dataset.prices),qty=+c.querySelector('.qty').value,custom=c.querySelector('.custom')?.checked||false;
+    const price=((p[+s.value]??p[0]??0)+(custom?+c.dataset.custom:0))*qty;
+    cart.push({name:c.dataset.name,size:s.selectedOptions[0].text,qty,price,customLabel:custom?c.querySelector('.custom').parentElement.textContent.trim().replace(/\s*\(\+.*\)$/,''):''});
+    renderCart();
+    const originalText=b.textContent;b.textContent='¡Agregado al carrito! ✓';b.style.background='#143d20';b.style.color='#fff';
+    setTimeout(()=>{b.textContent=originalText;b.style.background='';b.style.color=''},1200);
+    showToast('¡Producto agregado al carrito con éxito!');
+    return;
+  }
+  if(e.target.dataset.remove!==undefined){cart.splice(+e.target.dataset.remove,1);renderCart()}
+  if(e.target.id==='clear-cart-btn'){cart=[];renderCart()}
+  if(e.target.closest('.faq-question')){const f=e.target.closest('.faq-item');f.classList.toggle('is-open');f.querySelector('button').setAttribute('aria-expanded',f.classList.contains('is-open'))}
+});
+ 
+$('q').addEventListener('input',renderCatalog);
+$('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(b){categoryFilter=b.dataset.cat;renderCatalog()}});
+ 
+// Formulario: el error se borra al escribir y al enviar con éxito
+['f-name','f-msg'].forEach(id=>$(id).addEventListener('input',()=>{$('err').textContent=''}));
+$('quote-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=$('f-name').value.trim();
+  if(!name||!cart.length){$('err').textContent=!name?'Escribe tu nombre.':'Tu carrito está vacío.';return}
+  $('err').textContent='';
+  const text=`¡Hola Naryae®! Soy ${name} y quiero cotizar:\n`+cart.map(x=>`${x.qty}x ${x.name} (${x.size}) - ${money(x.price)}`).join('\n')+`\nTotal estimado: ${money(cart.reduce((a,x)=>a+x.price,0))}\n${$('f-msg').value}`;
+  window.open('https://wa.me/56934486112?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+});
+ 
+$('burger').addEventListener('click',()=>{const open=$('nav').classList.toggle('open');$('burger').setAttribute('aria-expanded',String(open));$('burger').setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
+$('nav').addEventListener('click',e=>{if(e.target.closest('a')){$('nav').classList.remove('open');$('burger').setAttribute('aria-expanded','false')}});
+ 
+/* ===== CALCULADORA ===== */
+const modal=$('size-modal'),calcType=$('calc-type'),calcValue=$('calc-value'),calcOutput=$('calc-output');
+const heightLimits=[[108,'Talla 4'],[116,'Talla 6'],[124,'Talla 8'],[132,'Talla 10'],[140,'Talla 12'],[148,'Talla 14'],[158,'Talla 16'],[166,'Talla S Adulto'],[174,'Talla M Adulto'],[182,'Talla L Adulto']];
+ 
+function syncCalcType(){
+  const school=calcType.value==='school';
+  $('calc-label').textContent=school?'Estatura de la persona (cm)':'Ancho de pecho en plano (cm)';
+  $('calc-hint').textContent=school?'Mide la estatura de la persona sin zapatos.':'Ancho de lado a lado de una prenda cómoda, no el contorno.';
+  calcValue.min=school?'80':'25';calcValue.max=school?'210':'80';calcValue.step=school?'1':'0.5';
+  calcValue.placeholder=school?'Ej.: 128':'Ej.: 36';calcValue.value='';
+  calcOutput.textContent='Ingresa una medida para sugerir la talla.';
+}
+calcType.addEventListener('change',syncCalcType);
+$('open-size-guide').addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('close-size-modal').focus()});
+function closeCalc(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';$('open-size-guide').focus()}
+$('close-size-modal').addEventListener('click',closeCalc);
+modal.addEventListener('click',e=>{if(e.target===modal)closeCalc()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeCalc()});
+ 
+calcValue.addEventListener('input',()=>{
+  const v=Number(calcValue.value),school=calcType.value==='school';
+  if(!calcValue.value){calcOutput.textContent='Ingresa una medida para sugerir la talla.';return}
+  if(!Number.isFinite(v)||v<Number(calcValue.min)||v>Number(calcValue.max)){calcOutput.textContent=`Ingresa una medida válida entre ${calcValue.min} y ${calcValue.max} cm.`;return}
+  let label;
+  if(school){
+    label=(heightLimits.find(([lim])=>v<lim)||[0,'Talla XL / XXL'])[1];
+  }else{
+    // Talla de la tabla (SZ) con el ancho más cercano; si queda justo entre dos, se elige la mayor
+    let best=SZ[0];
+    for(const t of SZ){if(Math.abs(t[1]-v)<=Math.abs(best[1]-v))best=t}
+    label=best[0];
+  }
+  calcOutput.innerHTML=`✨ Sugerencia orientativa: <strong>${label}</strong><br><small style="font-weight:400;color:var(--muted)">La talla puede variar según modelo y ajuste. Confírmala al cotizar.</small>`;
+});
+ 
+$('yr').textContent=new Date().getFullYear();
+renderStatic();renderCatalog();renderCart();
+})();
 </script>
 </body>
 </html>
+ 
