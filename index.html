@@ -612,16 +612,24 @@
 
     <!-- Formulario de edición del producto seleccionado -->
     <div id="admin-editor-section" style="border:1.5px solid var(--line);border-radius:16px;padding:20px">
+      
+      <!-- IDENTIFICADOR VISUAL CLARO DEL PRODUCTO SELECCIONADO -->
+      <div style="background:var(--deep);color:#fff;padding:14px 18px;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 15px rgba(18,53,31,0.2)">
+        <div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--clover);font-weight:700;margin-bottom:2px">Editando actualmente:</div>
+        <div id="admin-current-banner-name" style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:700">Selecciona un producto</div>
+        <div id="admin-current-banner-cat" style="font-size:13px;color:#d6e8d3;margin-top:2px">Categoría</div>
+      </div>
+
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px">
         <div>
           <span id="admin-edit-badge" class="chip" style="font-size:12px;padding:3px 10px;margin-bottom:4px;display:inline-block">Colegio</span>
           <h4 id="admin-edit-title" style="font-size:22px;color:var(--deep)">Nombre del Producto</h4>
         </div>
         
-        <!-- Toggle de Agotado -->
-        <label class="checkbox-label" style="background:#fff;padding:8px 14px;border:2px solid var(--line);border-radius:30px;cursor:pointer">
-          <input type="checkbox" id="admin-edit-soldout" style="width:20px;height:20px;accent-color:#b3261e">
-          <span id="admin-soldout-label" style="font-weight:700;font-size:14px;color:var(--green)">✓ Disponible para compra</span>
+        <!-- Toggle de Agotado / Disponibilidad con textos claros -->
+        <label class="checkbox-label" style="background:#fff;padding:10px 16px;border:2px solid var(--line);border-radius:30px;cursor:pointer">
+          <input type="checkbox" id="admin-edit-soldout" style="width:22px;height:22px;accent-color:#b3261e">
+          <span id="admin-soldout-label" style="font-weight:700;font-size:15px;color:var(--green)">✓ Disponible para compra</span>
         </label>
       </div>
 
@@ -1164,6 +1172,11 @@ function loadProductIntoEditor(fullName){
   currentEditingProduct=p;
   
   const ovr=adminOverrides[fullName]||{};
+  
+  // Actualizar banner superior con el nombre exacto que se está editando
+  $('admin-current-banner-name').textContent = p.displayName;
+  $('admin-current-banner-cat').textContent = 'Categoría: ' + p.category;
+
   $('admin-edit-title').textContent=p.displayName;
   $('admin-edit-badge').textContent=p.category;
   
