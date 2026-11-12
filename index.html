@@ -263,7 +263,7 @@ const schools=['Liceo Las Quemas','Escuela 10 Angelmó','Colegio Darío Salas','
    Para que los clientes vean tus cambios: en el panel usa "Publicar / respaldo",
    copia el texto y reemplaza la línea de abajo completa.
    (Incluye precios, stock por talla, fotos y el aviso de temporada.) */
-const SAVED_OVERRIDES={};const SAVED_OVERRIDES={"_cfg":{"banner":{"on":true,"text":"Temporada alta: Pide tu uniforme con anticipación para asegurar tu cupo y fecha de entrega."}}};
+const SAVED_OVERRIDES={};const SAVED_OVERRIDES
 const ADMIN_HASH=3685363071995325;
 const okPhoto=u=>typeof u==='string'&&/^(data:image\/(png|jpe?g|webp);base64,[A-Za-z0-9+\/=]+|https?:\/\/\S+|[\w\-.\/]+\.(png|jpe?g|webp|gif|avif))$/i.test(u);
 function cleanOv(src){const out=Object.create(null);if(!src||typeof src!=='object')return out;for(const [k,v] of Object.entries(src)){if(!v||typeof v!=='object')continue;if(k==='_cfg'){const t=String(v.banner?.text||'').slice(0,200);if(v.banner&&(v.banner.on===true||t))out._cfg={banner:{on:v.banner.on===true,text:t}};continue}const o={};if(Array.isArray(v.prices)&&v.prices.every(n=>Number.isFinite(n)&&n>=0))o.prices=v.prices.map(Math.round);if(Number.isFinite(v.custom)&&v.custom>=0)o.custom=Math.round(v.custom);if(v.sold===true)o.sold=true;if(Array.isArray(v.soldSizes)){const ss=[...new Set(v.soldSizes.filter(n=>Number.isInteger(n)&&n>=0))];if(ss.length)o.soldSizes=ss}if(okPhoto(v.photo))o.photo=v.photo;if(Object.keys(o).length)out[k]=o}return out}
