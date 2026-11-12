@@ -157,11 +157,11 @@
     </div>
   </div>
 </footer><div class="fab"><a id="fab-link" href="#carrito-seccion">🛒<span class="fab-text"> Ver Carrito</span> <span class="fab-count" id="fab-count" hidden>0</span></a></div>
- 
+
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-icon" aria-hidden="true">✓</span><span id="toast-msg"></span><a class="toast-link" id="toast-link" href="#carrito-seccion">Ver carrito</a></div>
- 
+
 <div class="modal-overlay" id="size-modal" aria-hidden="true"><div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="close-size-modal" type="button" aria-label="Cerrar calculadora">✕</button><h3 id="modal-title" style="margin-bottom:8px;color:var(--deep)">Calculadora de tallas por medida</h3><p style="color:var(--muted);font-size:14px">Elige qué medida tienes disponible. Para la medida de pecho, mide de axila a axila una prenda cómoda extendida en una superficie plana.</p><div class="calc-box"><label for="calc-type">Tipo de medida</label><select id="calc-type"><option value="chest">Ancho de pecho de una prenda (en plano)</option><option value="school">Estatura de la persona</option></select><label id="calc-label" for="calc-value">Ancho de pecho en plano (cm)</label><input id="calc-value" type="number" inputmode="decimal" min="25" max="80" step="0.5" placeholder="Ej.: 36"><small id="calc-hint" style="color:var(--muted)">Ancho medido de lado a lado, no contorno.</small><div class="calc-result" id="calc-output" aria-live="polite">Ingresa una medida para sugerir la talla.</div></div><p class="modal-note" style="margin-top:14px">💡 Sugerencia orientativa: el ajuste final puede variar según el modelo y la holgura preferida. Confirma la talla al cotizar por WhatsApp.</p></div></div>
- 
+
 <!-- Modal Política de Privacidad -->
 <div class="modal-overlay" id="privacy-modal" aria-hidden="true">
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
@@ -192,31 +192,31 @@
     </div>
   </div>
 </div>
- 
+
 <!-- Panel de administrador -->
 <div class="modal-overlay" id="adm-modal" aria-hidden="true"><div class="modal-content" role="dialog" aria-modal="true" aria-label="Panel de administración" id="adm-box"></div></div>
 <div class="admin-bar" id="admin-bar" hidden></div>
- 
+
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id);
 const fmt=n=>'$'+new Intl.NumberFormat('es-CL').format(n);
 const money=n=>fmt(n)+' CLP';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- 
+
 /* ===== DATOS =====
    Cada precio se escribe UNA sola vez, como [etiqueta, precio].
    El texto del menú ("Talla 4 (32 cm) - $8.500") se genera solo. */
- 
+
 // Tabla única de tallas: nombre y ancho de pecho en plano (cm). La calculadora usa esta misma tabla.
 const SZ=[['Talla 4',32],['Talla 6',34],['Talla 8',36],['Talla 10',38],['Talla 12',41],['Talla 14',44],['Talla 16',47],['Talla S Adulto',50],['Talla M Adulto',53],['Talla L Adulto',56],['Talla XL / XXL',60]];
 // S(precios, conCm, desde): asocia una lista de precios a la tabla de tallas
 const S=(prices,cm=true,from=0)=>SZ.slice(from,from+prices.length).map(([n,c],i)=>[cm?`${n} (${c}${c===60?'+':''} cm)`:n,prices[i]]);
- 
+
 const schoolSizes=S([26000,28000,30000,33000,35000,37000,40000,42000,44000,46000,49000]);
 const topSizes=S([8500,9500,10500,12000,13500,15000,16500,18500,20000,21500,24000]);
 const bottomSizes=S([9500,10500,11500,13000,14500,16000,17500,19500,21000,22500,25000],false);
- 
+
 // [nombre, descripción, opciones, recargo personalización, texto personalización]
 const individual=[
 ['Camisa / Blusa Escolar','Camisa o blusa blanca tradicional para uniforme formal.',topSizes,0,'','Camisas y blusas'],
@@ -228,7 +228,7 @@ const individual=[
 // Para sumar productos: agrega una línea arriba con su categoría (última posición). Si la categoría es nueva, agrégala aquí:
 const indCats=['Camisas y blusas','Poleras','Pantalones','Faldas','Educación física'];
 let indFilter='Todas';
- 
+
 const categories=[
 ['Servicios de Envíos',[
  ['Despacho a Domicilio (Puerto Montt)','Envío seguro de tus prendas directo a tu casa.',[['Sector Centro / Alerce / Mirasol',2500],['Sector La Vara / Lagunitas / Pelluco',4000],['Zonas Rurales / Carretera Austral',6000]]]]],
@@ -256,14 +256,14 @@ const categories=[
  ['Tazas personalizadas','Diseños personalizados en sublimación.',[['Cerámica 11 oz',3500],['Mágica térmica 11 oz',6000]]],
  ['Cojines decorativos / navideños','Incluyen relleno suave y funda lavable.',[['40 x 40 cm',8000],['50 x 50 cm',10000]]],
  ['Fundas de Almohada Personalizadas','Con fotos, frases o diseños a elección.',[['50 x 70 cm',6500]]]]]];
- 
+
 const schools=['Liceo Las Quemas','Escuela 10 Angelmó','Colegio Darío Salas','Escuela Licarayén','Escuela Básica Melipulli','Colegio Domingo Santa María','Liceo Politécnico Mirasol','Escuela Mirasol','Colegio Creación','Escuela Rotario Bravo','Escuela Pillalinkan','Escuela Lagunitas','Colegio María Auxiliadora'];
- 
+
 /* ===== PANEL DE ADMINISTRADOR: cambios guardados =====
    Para que los clientes vean tus cambios: en el panel usa "Publicar / respaldo",
    copia el texto y reemplaza la línea de abajo completa.
    (Incluye precios, stock por talla, fotos y el aviso de temporada.) */
-const SAVED_OVERRIDES={};const SAVED_OVERRIDES={"_cfg":{"banner":{"on":true,"text":"Temporada alta: pide tu uniforme con anticipación para asegurar tu cupo y fecha de entrega."}}};
+const SAVED_OVERRIDES={};
 const ADMIN_HASH=3685363071995325;
 const okPhoto=u=>typeof u==='string'&&/^(data:image\/(png|jpe?g|webp);base64,[A-Za-z0-9+\/=]+|https?:\/\/\S+|[\w\-.\/]+\.(png|jpe?g|webp|gif|avif))$/i.test(u);
 function cleanOv(src){const out=Object.create(null);if(!src||typeof src!=='object')return out;for(const [k,v] of Object.entries(src)){if(!v||typeof v!=='object')continue;if(k==='_cfg'){const t=String(v.banner?.text||'').slice(0,200);if(v.banner&&(v.banner.on===true||t))out._cfg={banner:{on:v.banner.on===true,text:t}};continue}const o={};if(Array.isArray(v.prices)&&v.prices.every(n=>Number.isFinite(n)&&n>=0))o.prices=v.prices.map(Math.round);if(Number.isFinite(v.custom)&&v.custom>=0)o.custom=Math.round(v.custom);if(v.sold===true)o.sold=true;if(Array.isArray(v.soldSizes)){const ss=[...new Set(v.soldSizes.filter(n=>Number.isInteger(n)&&n>=0))];if(ss.length)o.soldSizes=ss}if(okPhoto(v.photo))o.photo=v.photo;if(Object.keys(o).length)out[k]=o}return out}
@@ -271,11 +271,11 @@ let isAdmin=false;try{isAdmin=sessionStorage.getItem('naryae_admin')==='1'}catch
 let OV=cleanOv(SAVED_OVERRIDES);
 const REG={};
 function syncOV(){let d=null;try{d=localStorage.getItem('naryae_ov')}catch{}try{OV=isAdmin&&d?cleanOv(JSON.parse(d)):cleanOv(SAVED_OVERRIDES)}catch{OV=cleanOv(SAVED_OVERRIDES)}}
- 
+
 /* ===== CARRITO ===== */
 let cart=[];
 try{const saved=JSON.parse(localStorage.getItem('naryae_cart2')||'[]');if(Array.isArray(saved))cart=saved.filter(x=>x&&typeof x.key==='string'&&Number.isInteger(x.idx)&&x.idx>=0&&Number.isInteger(x.qty)&&x.qty>0&&x.qty<100).map(x=>({key:x.key,idx:x.idx,size:String(x.size||''),qty:x.qty,custom:x.custom===true,customLabel:String(x.customLabel||'').slice(0,80),note:String(x.note||'').slice(0,60),unit:0,price:0}))}catch{}
- 
+
 /* ===== REGISTRO DE PRODUCTOS (para precios, stock y analítica) ===== */
 function buildRegistry(){
   const reg=(name,options,prefix,custom,customLabel,group)=>{REG[prefix+name]={name,labels:options.map(x=>x[0]),orig:options.map(x=>x[1]),custom,customLabel,group,sig:JSON.stringify(options.map(x=>x[1]))+'|'+options.map(x=>x[0]).join(',')}};
@@ -286,12 +286,12 @@ function buildRegistry(){
 }
 const unitPrice=(key,idx,custom)=>{const o=OV[key]||{},r=REG[key];return (o.prices?.[idx]??r.orig[idx])+(custom?(o.custom??r.custom):0)};
 const isSold=(key,idx)=>{const o=OV[key]||{};return o.sold===true||(o.soldSizes||[]).includes(idx)};
- 
+
 /* ===== MEDICIÓN (Google Tag Manager / dataLayer) =====
    No se envían datos personales. En modo administrador no se registra nada. */
 function track(event,data={}){if(isAdmin)return;try{window.dataLayer=window.dataLayer||[];if(data.ecommerce)window.dataLayer.push({ecommerce:null});window.dataLayer.push({event,...data})}catch{}}
 const ecom=it=>({item_id:it.key,item_name:it.key,item_category:REG[it.key].group,item_variant:it.size,price:it.unit,quantity:it.qty});
- 
+
 /* ===== TARJETAS ===== */
 function card(name,desc,options,prefix='',custom=0,customLabel='Agregar personalización'){
   const key=prefix+name,o=OV[key]||{},id='c'+Math.random().toString(36).slice(2);
@@ -302,19 +302,19 @@ function card(name,desc,options,prefix='',custom=0,customLabel='Agregar personal
   const img=o.photo&&okPhoto(o.photo)?`<img class="pimg" src="${esc(o.photo)}" alt="${esc(name)}" loading="lazy">`:'';
   return `<article class="card" data-name="${esc(key)}"${sold?' data-sold="1"':''} data-prices='${JSON.stringify(prices)}' data-custom="${cust}">${sold?'<span class="badge-sold">Agotado</span>':''}${img}<h3>${esc(name)}</h3><p>${esc(desc)}</p><label for="${id}">Selecciona talla / opción</label><select class="size" id="${id}"${dis}>${opts}</select>${custom?`<label class="checkbox-label"><input class="custom" type="checkbox"${dis}> ${esc(customLabel)} (+${money(cust)})</label><input class="emb" type="text" maxlength="60" placeholder="Nombre o texto a bordar (opcional)" aria-label="Nombre o texto a bordar" hidden${dis}>`:''}<div class="in-cart" hidden></div><div class="buy"><label>Cantidad<select class="qty"${dis}>${qtys}</select></label><div class="price-tag"></div></div><button class="btn green add" type="button"${dis}>${sold?'Agotado':'Agregar al carrito'}</button>${isAdmin?`<button type="button" class="btn ghost edit-btn" data-edit="${esc(key)}">✏️ Editar precios / foto / stock</button>`:''}</article>`;
 }
- 
+
 function updatePrice(e){
   const c=e.matches('.card')?e:e.closest('.card'),s=c.querySelector('.size'),p=JSON.parse(c.dataset.prices);
   const v=(p[+s.value]??p[0]??0)+(c.querySelector('.custom')?.checked?+c.dataset.custom:0);
   c.querySelector('.price-tag').textContent=money(v*(+c.querySelector('.qty').value||1));
 }
- 
+
 // Prendas sueltas: los botones solo muestran/ocultan tarjetas, así no se pierde lo que ya elegiste
 function renderIndTabs(){
   $('ind-tabs').innerHTML=['Todas',...indCats].map(c=>`<button class="chip" type="button" data-ind="${esc(c)}" aria-pressed="${c===indFilter}">${esc(c)}</button>`).join('');
   document.querySelectorAll('#individual-grid .card').forEach(c=>{c.hidden=indFilter!=='Todas'&&c.dataset.cat!==indFilter});
 }
- 
+
 // Colegios y prendas sueltas: se dibujan UNA sola vez (así no pierden la talla elegida al filtrar el catálogo)
 function renderStatic(){
   $('schools-grid').innerHTML=schools.map(s=>card(s,'Uniforme institucional completo (buzo, polera y prendas oficiales).',schoolSizes,'Uniforme ',3000,'Agregar bordado institucional o nombre')).join('');
@@ -322,7 +322,7 @@ function renderStatic(){
   renderIndTabs();
   document.querySelectorAll('#schools-grid .card,#individual-grid .card').forEach(updatePrice);
 }
- 
+
 // Catálogo: se redibuja al filtrar/buscar, pero recuerda talla, cantidad y extras ya elegidos
 let categoryFilter='Todo';
 function renderCatalog(){
@@ -340,7 +340,7 @@ function renderCatalog(){
   });
   markCards();
 }
- 
+
 function renderCart(){
   cart.forEach(it=>{const r=REG[it.key];if(!r)return;it.size=r.labels[it.idx];it.unit=unitPrice(it.key,it.idx,it.custom);it.price=it.unit*it.qty});
   try{localStorage.setItem('naryae_cart2',JSON.stringify(cart))}catch{}
@@ -351,14 +351,14 @@ function renderCart(){
   markCards();
 }
 function changeQty(i,d){const it=cart[i];if(!it)return;it.qty=Math.min(99,Math.max(1,it.qty+d));renderCart()}
- 
+
 // Muestra en cada tarjeta cuántas unidades de ese producto ya están en el carrito
 function markCards(){document.querySelectorAll('.card').forEach(c=>{const n=cart.filter(x=>x.key===c.dataset.name).reduce((a,x)=>a+x.qty,0),el=c.querySelector('.in-cart');if(el){el.hidden=!n;el.textContent=n?`✓ Ya tienes ${n} en tu carrito`:''}})}
- 
+
 let toastTimeout;
 function showToast(message){const toast=$('toast');$('toast-msg').textContent=message;toast.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.classList.remove('show'),4500)}
 $('toast-link').addEventListener('click',()=>$('toast').classList.remove('show'));
- 
+
 // Confirmación al agregar: botón, tarjeta, botón flotante y aviso con acceso al carrito
 function confirmAdd(b,c,qty){
   const name=c.querySelector('h3').textContent,total=cart.reduce((a,i)=>a+i.qty,0),fab=$('fab-link');
@@ -367,7 +367,7 @@ function confirmAdd(b,c,qty){
   c.classList.remove('flash');void c.offsetWidth;c.classList.add('flash');flyToCart(b,()=>{fab.classList.remove('bump');void fab.offsetWidth;fab.classList.add('bump')});
   showToast(`${qty}x ${name} agregado · ${total} ${total===1?'producto':'productos'} en tu carrito`);
 }
- 
+
 /* ===== EVENTOS ===== */
 document.addEventListener('change',e=>{
   if(e.target.matches('.size,.qty,.custom'))updatePrice(e.target);
@@ -393,11 +393,11 @@ document.addEventListener('click',e=>{
   if(e.target.closest('[data-open-privacy]'))openPrivacy(e.target.closest('[data-open-privacy]'));
   if(e.target.closest('.faq-question')){const f=e.target.closest('.faq-item');document.querySelectorAll('.faq-item.is-open').forEach(o=>{if(o!==f){o.classList.remove('is-open');o.querySelector('button').setAttribute('aria-expanded','false')}});f.classList.toggle('is-open');f.querySelector('button').setAttribute('aria-expanded',f.classList.contains('is-open'))}
 });
- 
+
 $('q').addEventListener('input',renderCatalog);
 $('ind-tabs').addEventListener('click',e=>{const b=e.target.closest('[data-ind]');if(b){indFilter=b.dataset.ind;renderIndTabs()}});
 $('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(b){categoryFilter=b.dataset.cat;renderCatalog()}});
- 
+
 // Formulario: el error se borra al escribir y al enviar con éxito
 ['f-name','f-msg'].forEach(id=>$(id).addEventListener('input',()=>{$('err').textContent=''}));
 $('quote-form').addEventListener('submit',e=>{
@@ -417,14 +417,14 @@ $('quote-form').addEventListener('submit',e=>{
   track('generate_lead',{currency:'CLP',value:total});
   window.open('https://wa.me/56934486112?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 });
- 
+
 $('burger').addEventListener('click',()=>{const open=$('nav').classList.toggle('open');$('burger').setAttribute('aria-expanded',String(open));$('burger').setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
 $('nav').addEventListener('click',e=>{if(e.target.closest('a')){$('nav').classList.remove('open');$('burger').setAttribute('aria-expanded','false')}});
- 
+
 /* ===== CALCULADORA ===== */
 const modal=$('size-modal'),calcType=$('calc-type'),calcValue=$('calc-value'),calcOutput=$('calc-output');
 const heightLimits=[[108,'Talla 4'],[116,'Talla 6'],[124,'Talla 8'],[132,'Talla 10'],[140,'Talla 12'],[148,'Talla 14'],[158,'Talla 16'],[166,'Talla S Adulto'],[174,'Talla M Adulto'],[182,'Talla L Adulto']];
- 
+
 function syncCalcType(){
   const school=calcType.value==='school';
   $('calc-label').textContent=school?'Estatura de la persona (cm)':'Ancho de pecho en plano (cm)';
@@ -458,7 +458,7 @@ document.addEventListener('keydown',e=>{
   if(privacyModal.classList.contains('open'))closePrivacy();
   if($('adm-modal').classList.contains('open'))closeAdm();
 });
- 
+
 calcValue.addEventListener('input',()=>{
   const v=Number(calcValue.value),school=calcType.value==='school';
   if(!calcValue.value){calcOutput.textContent='Ingresa una medida para sugerir la talla.';return}
@@ -474,9 +474,9 @@ calcValue.addEventListener('input',()=>{
   }
   calcOutput.innerHTML=`✨ Sugerencia orientativa: <strong>${label}</strong><br><small style="font-weight:400;color:var(--muted)">La talla puede variar según modelo y ajuste. Confírmala al cotizar.</small>`;
 });
- 
+
 const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
- 
+
 // Trébol que vuela desde el botón hasta el carrito
 function flyToCart(from,done){
   if(reduced){done();return}
@@ -487,15 +487,15 @@ function flyToCart(from,done){
   const dx=t.left+t.width/2-(a.left+a.width/2),dy=t.top+t.height/2-(a.top+a.height/2);
   el.animate([{transform:'translate(0,0) scale(1) rotate(0)',opacity:1},{transform:`translate(${dx*.5}px,${dy*.5-60}px) scale(1.4) rotate(180deg)`,opacity:1,offset:.5},{transform:`translate(${dx}px,${dy}px) scale(.4) rotate(360deg)`,opacity:.3}],{duration:750,easing:'ease-in-out'}).onfinish=()=>{el.remove();done()};
 }
- 
+
 function countUp(el,to,suffix=''){
   if(reduced){el.textContent=to+suffix;return}
   const t0=performance.now();
   (function f(t){const k=Math.min(1,(t-t0)/1200);el.textContent=Math.round(to*(1-Math.pow(1-k,3)))+suffix;if(k<1)requestAnimationFrame(f)})(t0);
 }
- 
+
 document.addEventListener('animationend',e=>{if(e.animationName==='pop'){e.target.classList.remove('pop');e.target.style.animationDelay=''}});
- 
+
 function initEffects(){
   // Barra de progreso y sombra del encabezado
   const hdr=document.querySelector('header'),prog=$('progress');
@@ -516,7 +516,7 @@ function initEffects(){
   const obs=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');obs.unobserve(e.target);setTimeout(()=>e.target.classList.remove('reveal','in'),900)}),{threshold:.12});
   els.forEach((el,i)=>{el.style.setProperty('--d',(i%4)*.08+'s');el.classList.add('reveal');obs.observe(el)});
 }
- 
+
 /* ===== PANEL DE ADMINISTRADOR ===== */
 const h53=(str,seed=0)=>{let h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(let i=0,ch;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)};
 let admTries=0,admLock=0,edKey=null,edPhoto='';
@@ -649,7 +649,7 @@ document.addEventListener('change',async e=>{
   if(e.target.id==='ed-file'&&e.target.files[0]){try{edPhoto=await fileToDataURL(e.target.files[0]);$('ed-url').value='';$('ed-msg').textContent='';setPrev()}catch{$('ed-msg').textContent='No se pudo leer esa imagen.'}}
   if(e.target.id==='ed-url'){const v=e.target.value.trim();if(!v)return;if(okPhoto(v)&&!v.startsWith('data:')){edPhoto=v;$('ed-msg').textContent='';setPrev()}else $('ed-msg').textContent='Esa dirección no parece una imagen válida (debe ser https:// o terminar en .jpg, .png, .webp).'}
 });
- 
+
 $('yr').textContent=new Date().getFullYear();
 buildRegistry();syncOV();syncAdminUI();fillFormLists();renderNotice();renderStatic();renderCatalog();renderCart();initEffects();
 // Alternativa al candado: abrir la página con #admin al final de la dirección
@@ -658,4 +658,3 @@ const openFromHash=()=>{if(location.hash==='#admin'&&!isAdmin)openLogin()};openF
 </script>
 </body>
 </html>
- 
