@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Confecciones Naryae: uniformes escolares, arreglos de ropa, despachos, ropa personalizada y regalos en Puerto Montt. Cotiza por WhatsApp.">
   <meta name="theme-color" content="#143d20">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Confecciones Naryae">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="Confecciones Naryae® | Costura y confección en Puerto Montt">
+  <meta property="og:description" content="Uniformes escolares, arreglos de ropa, ropa personalizada, delantales y regalos en Puerto Montt. Arma tu pedido y cotiza por WhatsApp.">
+  <!-- Cuando subas og-image.png a tu sitio, activa esta línea con tu dominio real:
+  <meta property="og:image" content="https://TU-DOMINIO.cl/og-image.png"> -->
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ClothingStore","name":"Confecciones Naryae","description":"Uniformes escolares, arreglos de ropa, ropa corporativa y personalizada, delantales y regalos en Puerto Montt.","telephone":"+56934486112","email":"naryae142020@gmail.com","foundingDate":"2020-03-14","areaServed":"Puerto Montt","address":{"@type":"PostalAddress","addressLocality":"Puerto Montt","addressRegion":"Región de Los Lagos","addressCountry":"CL"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"16:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"18:00"}],"sameAs":["https://www.instagram.com/naryae24.02"]}</script>
   <title>Confecciones Naryae® | Costura y confección en Puerto Montt</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍀</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,6 +115,19 @@
     .adm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
     footer{padding-bottom:84px}
     .admin-on .toast{bottom:170px}
+    .notice{background:#ffe9a8;color:#4a3500;font-weight:600;font-size:15px}.notice[hidden]{display:none}
+    .notice .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px}
+    .notice button{background:none;border:0;font-size:18px;cursor:pointer;color:inherit;min-width:32px;min-height:32px}
+    #quote-form label{display:block;margin-bottom:10px;font-weight:600;font-size:14px}
+    .ship{border:2px dashed var(--line);border-radius:12px;padding:8px 14px 12px;margin:0 0 12px}.ship legend{font-weight:600;font-size:14px;padding:0 6px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .emb{margin-top:2px}
+    .cart-item{align-items:center}.ci-main{flex:1 1 auto}.ci-warn{color:#b3261e;font-weight:600}.cart-item.is-sold .ci-main{opacity:.65}
+    .ci-qty{display:flex;align-items:center;gap:8px;font-weight:700}
+    .cart-item .ci-qty button{width:34px;height:34px;border:2px solid var(--green);border-radius:50%;color:var(--green);font-size:18px;line-height:1;background:white;cursor:pointer}
+    .ci-price{white-space:nowrap}
+    .adm-row{grid-template-columns:1fr 110px auto}.adm-row.two{grid-template-columns:1fr 130px}.adm-chk{font-size:13px}
+    @media(max-width:700px){.two{grid-template-columns:1fr}.cart-item{flex-wrap:wrap}.ci-main{flex:1 1 100%}.adm-row{grid-template-columns:1fr 100px}.adm-row .adm-chk{grid-column:1/-1}}
     @media(max-width:700px){.pimg{aspect-ratio:16/10}}
   </style>
 </head>
@@ -114,12 +136,13 @@
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <header><div class="wrap bar"><a class="logo script" href="#inicio" aria-label="Naryae®, inicio">Naryae®</a><a class="cart-pill" href="#carrito-seccion" aria-label="Ir al carrito">🛒 <span data-cart-count>0</span></a><button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">Menú</button><nav id="nav" aria-label="Principal"><a href="#catalogo">Catálogo</a><a href="#colegios">Uniformes Completos</a><a href="#prendas-sueltas">Prendas Individuales</a><a href="#carrito-seccion">Mi Carrito (<span data-cart-count>0</span>)</a><a href="#resenas">Reseñas</a><a href="#faq">Preguntas</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav></div></header>
+<div class="notice" id="notice" hidden role="status"><div class="wrap"><span id="notice-text"></span><button type="button" data-notice-close aria-label="Cerrar aviso">✕</button></div></div>
 <main id="contenido"><div class="hero" id="inicio"><div class="wrap patch"><span class="script">Style is an art</span><h1>Confeccionamos con calidad</h1><p>Uniformes escolares completos o prendas individuales, ropa personalizada, delantales y más. Arma tu pedido y cotiza por WhatsApp.</p><div class="cta"><a class="btn" href="#catalogo">Ver catálogo general</a><a class="btn ghost" href="#prendas-sueltas">Prendas sueltas</a><a class="btn ghost" href="#carrito-seccion">Ir al carrito</a></div><ul class="stats"><li><strong class="num" id="n-years">6+</strong><span>años confeccionando</span></li><li><strong class="num" id="n-schools">13</strong><span>colegios con set completo</span></li><li><strong>3–5</strong><span>días hábiles de entrega típica</span></li></ul><span class="deco d1" aria-hidden="true">🍀</span><span class="deco d2" aria-hidden="true">🍀</span><span class="deco d3" aria-hidden="true">🍀</span></div></div></div>
 <div class="marquee" aria-hidden="true"><div class="track"><span><b>✂️ Uniformes escolares</b><b>🧵 Arreglos de ropa</b><b>🎨 Bordados y estampados</b><b>🏢 Ropa corporativa</b><b>🍽️ Delantales y gastronomía</b><b>🎁 Hogar y regalos</b><b>📦 Despachos en Puerto Montt</b></span><span><b>✂️ Uniformes escolares</b><b>🧵 Arreglos de ropa</b><b>🎨 Bordados y estampados</b><b>🏢 Ropa corporativa</b><b>🍽️ Delantales y gastronomía</b><b>🎁 Hogar y regalos</b><b>📦 Despachos en Puerto Montt</b></span></div></div>
 <section id="catalogo"><div class="wrap"><h2>Catálogo Interactivo</h2><p class="lead">Explora arreglos, despachos, ropa corporativa y personalizada, accesorios, delantales, hogar y regalos.</p><button class="btn ghost" id="open-size-guide" type="button" style="margin-bottom:18px;color:var(--green)">📏 Calculadora por Medida</button><p class="price-disclaimer"><strong>Importante:</strong> los precios son referenciales. El valor final se confirma por WhatsApp y puede variar según colegio, talla, materiales, diseño y disponibilidad.</p><div class="tools"><div id="tabs" class="tabs" role="group" aria-label="Filtrar por categoría"></div><div class="search"><input id="q" type="search" placeholder="Buscar: arreglo, despacho, polar…" aria-label="Buscar en el catálogo"></div></div><div class="grid" id="grid" aria-live="polite"></div></div></section>
 <section id="colegios" class="alt"><div class="wrap"><h2>Uniformes por Colegio y Escuela (Set Completo)</h2><p class="lead">Encuentra el set institucional de cada establecimiento y selecciona la talla según el ancho de pecho en plano.</p><p class="price-disclaimer">Precios referenciales; el valor final se confirma por WhatsApp.</p><p class="swipe-hint">Desliza para ver más colegios →</p><div class="grid" id="schools-grid"></div></div></section>
 <section id="prendas-sueltas"><div class="wrap"><h2>Prendas Escolares Individuales</h2><p class="lead">¿No necesitas el uniforme completo? Elige camisas, poleras, polerones, pantalones o faldas por separado.</p><p class="price-disclaimer">Precios referenciales sujetos a las especificaciones de cada colegio.</p><div class="tabs ind-tabs" id="ind-tabs" role="group" aria-label="Filtrar prendas por categoría"></div><p class="swipe-hint">Desliza para ver más →</p><div class="grid" id="individual-grid"></div></div></section>
-<section id="carrito-seccion" class="alt"><div class="wrap"><h2>Tu Carrito de Pedido</h2><p class="lead">Revisa los productos seleccionados antes de enviar tu cotización.</p><div class="cart-drawer"><button id="clear-cart-btn" type="button" style="background:none;border:0;color:#b3261e;font-weight:bold;cursor:pointer;margin-bottom:10px">Vaciar carrito ✕</button><ul id="cart-items" style="list-style:none;padding:0;margin:0 0 16px"></ul><div class="cart-total"><span>Total estimado referencial:</span><span id="cart-total-price">$0 CLP</span></div><p style="font-size:13px;color:var(--muted);margin-top:8px">El precio final y la fecha se confirman al coordinar el pedido por WhatsApp.</p></div><div class="contact" style="margin-top:24px"><div><h3>Datos para finalizar el pedido</h3><p>Al enviar, se abrirá WhatsApp con el detalle del carrito.</p><p><strong>WhatsApp oficial:</strong> +56 9 3448 6112</p><p><strong>Correo:</strong> <a href="mailto:naryae142020@gmail.com">naryae142020@gmail.com</a></p><p><strong>Horario:</strong><br>Lunes a viernes: 4:00 PM–10:00 PM<br>Sábado: 10:00 AM–6:00 PM</p></div><form id="quote-form"><label for="f-name">Tu nombre<input id="f-name" required maxlength="80" autocomplete="name" placeholder="Ej.: María Soto"></label><label for="f-msg">Comentarios o indicaciones<textarea id="f-msg" maxlength="500" placeholder="Fechas límite, colores, dirección, etc."></textarea></label><p class="form-privacy-note">Al enviar aceptas nuestra <button type="button" data-open-privacy>Política de Privacidad</button>. Tus datos solo se usan para coordinar tu cotización por WhatsApp.</p><p id="err" role="alert" style="color:#b3261e;font-weight:600"></p><button class="btn green" style="width:100%">Enviar pedido por WhatsApp</button></form></div></div></section>
+<section id="carrito-seccion" class="alt"><div class="wrap"><h2>Tu Carrito de Pedido</h2><p class="lead">Revisa los productos seleccionados antes de enviar tu cotización.</p><div class="cart-drawer"><button id="clear-cart-btn" type="button" style="background:none;border:0;color:#b3261e;font-weight:bold;cursor:pointer;margin-bottom:10px">Vaciar carrito ✕</button><ul id="cart-items" style="list-style:none;padding:0;margin:0 0 16px"></ul><div class="cart-total"><span>Total estimado referencial:</span><span id="cart-total-price">$0 CLP</span></div><p style="font-size:13px;color:var(--muted);margin-top:8px">El precio final y la fecha se confirman al coordinar el pedido por WhatsApp.</p></div><div class="contact" style="margin-top:24px"><div><h3>Datos para finalizar el pedido</h3><p>Al enviar, se abrirá WhatsApp con el detalle del carrito.</p><p><strong>WhatsApp oficial:</strong> +56 9 3448 6112</p><p><strong>Correo:</strong> <a href="mailto:naryae142020@gmail.com">naryae142020@gmail.com</a></p><p><strong>Horario:</strong><br>Lunes a viernes: 4:00 PM–10:00 PM<br>Sábado: 10:00 AM–6:00 PM</p></div><form id="quote-form"><label for="f-name">Tu nombre<input id="f-name" required maxlength="80" autocomplete="name" placeholder="Ej.: María Soto"></label><fieldset class="ship"><legend>¿Cómo recibes tu pedido?</legend><label class="checkbox-label"><input type="radio" name="f-ship" value="retiro" checked> Retiro en el taller</label><label class="checkbox-label"><input type="radio" name="f-ship" value="despacho"> Despacho a domicilio</label></fieldset><div id="ship-fields" hidden><label for="f-sector">Sector<select id="f-sector"><option value="">Elige tu sector…</option></select></label><label for="f-addr">Dirección<input id="f-addr" maxlength="120" autocomplete="street-address" placeholder="Calle, número, población…"></label></div><div class="two"><label for="f-school">Colegio<select id="f-school"><option value="">No aplica</option></select></label><label for="f-grade">Curso<input id="f-grade" maxlength="30" placeholder="Ej.: 3° básico"></label></div><label for="f-msg">Comentarios o indicaciones<textarea id="f-msg" maxlength="500" placeholder="Fechas límite, colores, dirección, etc."></textarea></label><p class="form-privacy-note">Al enviar aceptas nuestra <button type="button" data-open-privacy>Política de Privacidad</button>. Tus datos solo se usan para coordinar tu cotización por WhatsApp.</p><p id="err" role="alert" style="color:#b3261e;font-weight:600"></p><button class="btn green" style="width:100%">Enviar pedido por WhatsApp</button></form></div></div></section>
 <section id="resenas" class="alt"><div class="wrap"><h2>Lo que dicen nuestros clientes</h2><p class="lead">Opiniones de familias y clientes que confían en nuestras confecciones en Puerto Montt.</p><p class="swipe-hint">Desliza para ver más →</p><div class="reviews-grid"><article class="review-card"><div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div><p>“Mandé a hacer el buzo del colegio y la calidad de la tela es excelente. Quedó perfecto de talla y se demoraron súper poco. Muy recomendados.”</p><span class="review-author">— Marcela O., Alerce</span></article><article class="review-card"><div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div><p>“Excelente servicio de arreglos. Me salvaron ajustando unos pantalones y un cierre de chaqueta de forma impecable y rápida.”</p><span class="review-author">— Rodrigo V., Mirasol</span></article><article class="review-card"><div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div><p>“Encargué polerones personalizados para nuestro grupo de trabajo y el bordado quedó maravilloso. ¡Atención un 7!”</p><span class="review-author">— Karen S., Centro Puerto Montt</span></article></div></div></section>
 <section id="faq"><div class="wrap"><h2>Preguntas Frecuentes</h2><p class="lead">Resolvemos tus dudas sobre plazos, abonos y entregas.</p><div class="faq-list"><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Cómo se asegura mi cupo y la fecha de entrega?</button><div class="faq-answer"><p>El cupo y la fecha estimada se aseguran al registrar el abono (la mitad del pedido). En temporada alta los plazos pueden extenderse.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Cuánto tardan los pedidos?</button><div class="faq-answer"><p>En temporadas normales, la entrega suele tardar entre 3 y 5 días hábiles. En temporada alta o para requerimientos especiales, los plazos pueden extenderse.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Con qué medios de pago trabajan?</button><div class="faq-answer"><p>Recibimos transferencia bancaria y efectivo. Se solicita un abono inicial del 50%; el saldo se paga al retirar o recibir el despacho.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Hacen despachos a domicilio en Puerto Montt?</button><div class="faq-answer"><p>Sí, cubrimos Centro, Alerce, Mirasol, La Vara, Lagunitas y Pelluco, entre otros. La tarifa depende de la distancia.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Cómo hago mi pedido?</button><div class="faq-answer"><p>Elige tus productos, la talla y la cantidad, y agrégalos al carrito. Luego escribe tu nombre y presiona “Enviar pedido por WhatsApp”: se abrirá un mensaje con todo el detalle. Ahí confirmamos el precio final y la fecha de entrega.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Los precios de la página son finales?</button><div class="faq-answer"><p>Son referenciales. El valor final se confirma por WhatsApp y puede variar según el colegio, la talla, los materiales, el diseño y la disponibilidad.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Cómo elijo la talla correcta?</button><div class="faq-answer"><p>Usa la “Calculadora por Medida” del catálogo: ingresa el ancho de pecho de una prenda cómoda extendida en plano (de axila a axila) o la estatura de la persona. La sugerencia es orientativa y la talla se confirma al cotizar.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Hacen el uniforme de mi colegio si no aparece en la lista?</button><div class="faq-answer"><p>Escríbenos por WhatsApp con el nombre del establecimiento y, si puedes, una foto del modelo. Te confirmamos si podemos confeccionarlo y su valor.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Puedo agregar nombre, insignia o bordado a las prendas?</button><div class="faq-answer"><p>Sí. En varias prendas (poleras, polerones, delantales y uniformes completos) aparece una casilla de bordado o personalización con un costo adicional que se suma al total. Para algo especial, consúltanos por WhatsApp.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Hacen arreglos de ropa?</button><div class="faq-answer"><p>Sí: dobladillos, cambio de cierre y entallado o ajuste general. Los valores están en la categoría “Arreglos de ropa” del catálogo.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Confeccionan ropa para empresas o grupos?</button><div class="faq-answer"><p>Sí, hacemos camisas, blusas, polares y jockeys con el logo bordado, además de polerones personalizados. Escríbenos con la cantidad que necesitas para cotizar y coordinar plazos.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Puedo pedir varias prendas distintas en un mismo pedido?</button><div class="faq-answer"><p>Claro. Agrega todo al carrito y se enviará junto en un solo mensaje por WhatsApp.</p></div></article><article class="faq-item"><button class="faq-question" type="button" aria-expanded="false">¿Cuál es su horario de atención?</button><div class="faq-answer"><p>Lunes a viernes de 4:00 PM a 10:00 PM y sábados de 10:00 AM a 6:00 PM. También puedes escribirnos al correo naryae142020@gmail.com.</p></div></article></div></div></section>
 <section id="nosotros" class="alt"><div class="wrap about"><div class="about-text"><h2>Quiénes somos</h2><p class="lead">Confecciones Naryae® nació el <strong>14 de marzo del 2020</strong> en Puerto Montt, y desde ese mismo instante no hemos parado.</p><p>Comenzamos con un sueño y una máquina de coser, impulsados por la pasión de entregar prendas con un estándar superior. A lo largo de los años nos hemos consolidado como un taller de confianza para familias, colegios y empresas de la región.</p><p>Cada uniforme escolar, arreglo de ropa o polerón personalizado lleva impregnado nuestro compromiso con la durabilidad, el detalle y la cercanía con cada cliente. ¡Gracias por hacernos parte de su día a día!</p></div><div class="quote"><span class="script">Style is an art</span><p style="margin:10px 0 0;color:var(--muted)">Nos dedicamos a confeccionar con calidad desde 2020.</p></div></div></section>
@@ -238,11 +261,12 @@ const schools=['Liceo Las Quemas','Escuela 10 Angelmó','Colegio Darío Salas','
  
 /* ===== PANEL DE ADMINISTRADOR: cambios guardados =====
    Para que los clientes vean tus cambios: en el panel usa "Publicar / respaldo",
-   copia el texto y reemplaza la línea de abajo completa. */
+   copia el texto y reemplaza la línea de abajo completa.
+   (Incluye precios, stock por talla, fotos y el aviso de temporada.) */
 const SAVED_OVERRIDES={};
 const ADMIN_HASH=3685363071995325;
 const okPhoto=u=>typeof u==='string'&&/^(data:image\/(png|jpe?g|webp);base64,[A-Za-z0-9+\/=]+|https?:\/\/\S+|[\w\-.\/]+\.(png|jpe?g|webp|gif|avif))$/i.test(u);
-function cleanOv(src){const out=Object.create(null);if(!src||typeof src!=='object')return out;for(const [k,v] of Object.entries(src)){if(!v||typeof v!=='object')continue;const o={};if(Array.isArray(v.prices)&&v.prices.every(n=>Number.isFinite(n)&&n>=0))o.prices=v.prices.map(Math.round);if(Number.isFinite(v.custom)&&v.custom>=0)o.custom=Math.round(v.custom);if(v.sold===true)o.sold=true;if(okPhoto(v.photo))o.photo=v.photo;if(Object.keys(o).length)out[k]=o}return out}
+function cleanOv(src){const out=Object.create(null);if(!src||typeof src!=='object')return out;for(const [k,v] of Object.entries(src)){if(!v||typeof v!=='object')continue;if(k==='_cfg'){const t=String(v.banner?.text||'').slice(0,200);if(v.banner&&(v.banner.on===true||t))out._cfg={banner:{on:v.banner.on===true,text:t}};continue}const o={};if(Array.isArray(v.prices)&&v.prices.every(n=>Number.isFinite(n)&&n>=0))o.prices=v.prices.map(Math.round);if(Number.isFinite(v.custom)&&v.custom>=0)o.custom=Math.round(v.custom);if(v.sold===true)o.sold=true;if(Array.isArray(v.soldSizes)){const ss=[...new Set(v.soldSizes.filter(n=>Number.isInteger(n)&&n>=0))];if(ss.length)o.soldSizes=ss}if(okPhoto(v.photo))o.photo=v.photo;if(Object.keys(o).length)out[k]=o}return out}
 let isAdmin=false;try{isAdmin=sessionStorage.getItem('naryae_admin')==='1'}catch{}
 let OV=cleanOv(SAVED_OVERRIDES);
 const REG={};
@@ -250,17 +274,33 @@ function syncOV(){let d=null;try{d=localStorage.getItem('naryae_ov')}catch{}try{
  
 /* ===== CARRITO ===== */
 let cart=[];
-try{const saved=JSON.parse(localStorage.getItem('naryae_cart')||'[]');if(Array.isArray(saved))cart=saved.filter(x=>x&&typeof x.name==='string'&&typeof x.size==='string'&&Number.isFinite(x.qty)&&Number.isFinite(x.price)&&x.qty>0&&x.price>=0)}catch{}
+try{const saved=JSON.parse(localStorage.getItem('naryae_cart2')||'[]');if(Array.isArray(saved))cart=saved.filter(x=>x&&typeof x.key==='string'&&Number.isInteger(x.idx)&&x.idx>=0&&Number.isInteger(x.qty)&&x.qty>0&&x.qty<100).map(x=>({key:x.key,idx:x.idx,size:String(x.size||''),qty:x.qty,custom:x.custom===true,customLabel:String(x.customLabel||'').slice(0,80),note:String(x.note||'').slice(0,60),unit:0,price:0}))}catch{}
+ 
+/* ===== REGISTRO DE PRODUCTOS (para precios, stock y analítica) ===== */
+function buildRegistry(){
+  const reg=(name,options,prefix,custom,customLabel,group)=>{REG[prefix+name]={name,labels:options.map(x=>x[0]),orig:options.map(x=>x[1]),custom,customLabel,group,sig:JSON.stringify(options.map(x=>x[1]))+'|'+options.map(x=>x[0]).join(',')}};
+  categories.forEach(([cat,items])=>items.forEach(x=>reg(x[0],x[2],'',x[3]||0,x[4]||'Agregar personalización',cat)));
+  schools.forEach(n=>reg(n,schoolSizes,'Uniforme ',3000,'Agregar bordado institucional o nombre','Uniformes completos'));
+  individual.forEach(x=>reg(x[0],x[2],'Prenda Suelta: ',x[3]||0,x[4]||'Agregar personalización','Prendas individuales'));
+  cart=cart.filter(x=>REG[x.key]&&x.idx<REG[x.key].labels.length);
+}
+const unitPrice=(key,idx,custom)=>{const o=OV[key]||{},r=REG[key];return (o.prices?.[idx]??r.orig[idx])+(custom?(o.custom??r.custom):0)};
+const isSold=(key,idx)=>{const o=OV[key]||{};return o.sold===true||(o.soldSizes||[]).includes(idx)};
+ 
+/* ===== MEDICIÓN (Google Tag Manager / dataLayer) =====
+   No se envían datos personales. En modo administrador no se registra nada. */
+function track(event,data={}){if(isAdmin)return;try{window.dataLayer=window.dataLayer||[];if(data.ecommerce)window.dataLayer.push({ecommerce:null});window.dataLayer.push({event,...data})}catch{}}
+const ecom=it=>({item_id:it.key,item_name:it.key,item_category:REG[it.key].group,item_variant:it.size,price:it.unit,quantity:it.qty});
  
 /* ===== TARJETAS ===== */
 function card(name,desc,options,prefix='',custom=0,customLabel='Agregar personalización'){
   const key=prefix+name,o=OV[key]||{},id='c'+Math.random().toString(36).slice(2);
-  const orig=options.map(x=>x[1]),prices=orig.map((p,i)=>o.prices?.[i]??p),cust=o.custom??custom,sold=o.sold===true,dis=sold?' disabled':'';
-  REG[key]={name,labels:options.map(x=>x[0]),orig,custom,customLabel,sig:JSON.stringify(orig)+'|'+options.map(x=>x[0]).join(',')};
-  const opts=options.map(([label],i)=>`<option value="${i}">${esc(label)} - ${fmt(prices[i])}</option>`).join('');
+  const orig=options.map(x=>x[1]),prices=orig.map((p,i)=>o.prices?.[i]??p),cust=o.custom??custom,ss=o.soldSizes||[];
+  const free=options.findIndex((_,i)=>!ss.includes(i)),sold=o.sold===true||free<0,dis=sold?' disabled':'';
+  const opts=options.map(([label],i)=>`<option value="${i}"${ss.includes(i)?' disabled':''}${i===free?' selected':''}>${esc(label)} - ${fmt(prices[i])}${ss.includes(i)?' (agotado)':''}</option>`).join('');
   const qtys=Array.from({length:10},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');
   const img=o.photo&&okPhoto(o.photo)?`<img class="pimg" src="${esc(o.photo)}" alt="${esc(name)}" loading="lazy">`:'';
-  return `<article class="card" data-name="${esc(key)}"${sold?' data-sold="1"':''} data-prices='${JSON.stringify(prices)}' data-custom="${cust}">${sold?'<span class="badge-sold">Agotado</span>':''}${img}<h3>${esc(name)}</h3><p>${esc(desc)}</p><label for="${id}">Selecciona talla / opción</label><select class="size" id="${id}"${dis}>${opts}</select>${custom?`<label class="checkbox-label"><input class="custom" type="checkbox"${dis}> ${esc(customLabel)} (+${money(cust)})</label>`:''}<div class="in-cart" hidden></div><div class="buy"><label>Cantidad<select class="qty"${dis}>${qtys}</select></label><div class="price-tag"></div></div><button class="btn green add" type="button"${dis}>${sold?'Agotado':'Agregar al carrito'}</button>${isAdmin?`<button type="button" class="btn ghost edit-btn" data-edit="${esc(key)}">✏️ Editar precios / foto / stock</button>`:''}</article>`;
+  return `<article class="card" data-name="${esc(key)}"${sold?' data-sold="1"':''} data-prices='${JSON.stringify(prices)}' data-custom="${cust}">${sold?'<span class="badge-sold">Agotado</span>':''}${img}<h3>${esc(name)}</h3><p>${esc(desc)}</p><label for="${id}">Selecciona talla / opción</label><select class="size" id="${id}"${dis}>${opts}</select>${custom?`<label class="checkbox-label"><input class="custom" type="checkbox"${dis}> ${esc(customLabel)} (+${money(cust)})</label><input class="emb" type="text" maxlength="60" placeholder="Nombre o texto a bordar (opcional)" aria-label="Nombre o texto a bordar" hidden${dis}>`:''}<div class="in-cart" hidden></div><div class="buy"><label>Cantidad<select class="qty"${dis}>${qtys}</select></label><div class="price-tag"></div></div><button class="btn green add" type="button"${dis}>${sold?'Agotado':'Agregar al carrito'}</button>${isAdmin?`<button type="button" class="btn ghost edit-btn" data-edit="${esc(key)}">✏️ Editar precios / foto / stock</button>`:''}</article>`;
 }
  
 function updatePrice(e){
@@ -288,29 +328,32 @@ let categoryFilter='Todo';
 function renderCatalog(){
   const q=$('q').value.toLocaleLowerCase('es-CL').trim();
   const saved={};
-  $('grid').querySelectorAll('.card').forEach(c=>{saved[c.dataset.name]={size:c.querySelector('.size').value,qty:c.querySelector('.qty').value,custom:c.querySelector('.custom')?.checked||false}});
+  $('grid').querySelectorAll('.card').forEach(c=>{saved[c.dataset.name]={size:c.querySelector('.size').value,qty:c.querySelector('.qty').value,custom:c.querySelector('.custom')?.checked||false,note:c.querySelector('.emb')?.value||''}});
   const shown=categories.flatMap(([cat,items])=>items.map(x=>({cat,x}))).filter(({cat,x})=>(categoryFilter==='Todo'||cat===categoryFilter)&&(!q||`${cat} ${x[0]} ${x[1]}`.toLocaleLowerCase('es-CL').includes(q)));
   $('tabs').innerHTML=['Todo',...categories.map(x=>x[0])].map(c=>`<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c===categoryFilter}">${esc(c)}</button>`).join('');
   $('grid').innerHTML=shown.map(({x})=>card(x[0],x[1],x[2],'',x[3]||0,x[4])).join('')||'<p class="note">No encontramos productos con esa búsqueda.</p>';
   $('grid').querySelectorAll('.card').forEach((c,i)=>{
     c.classList.add('pop');c.style.animationDelay=Math.min(i,8)*40+'ms';
     const s=saved[c.dataset.name];
-    if(s){c.querySelector('.size').value=s.size;c.querySelector('.qty').value=s.qty;const k=c.querySelector('.custom');if(k)k.checked=s.custom}
+    if(s){const sz=c.querySelector('.size');sz.value=s.size;if(sz.selectedOptions[0]?.disabled){const f=[...sz.options].find(x=>!x.disabled);if(f)sz.value=f.value}c.querySelector('.qty').value=s.qty;const k=c.querySelector('.custom');if(k)k.checked=s.custom;const em=c.querySelector('.emb');if(em){em.value=s.note||'';em.hidden=!s.custom}}
     updatePrice(c);
   });
   markCards();
 }
  
 function renderCart(){
-  try{localStorage.setItem('naryae_cart',JSON.stringify(cart))}catch{}
-  const n=cart.reduce((a,i)=>a+i.qty,0);document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=n);$('fab-count').textContent=n;$('fab-count').hidden=!n;
-  $('cart-items').innerHTML=cart.map((x,i)=>`<li class="cart-item"><span>${x.qty}x ${esc(x.name)}<br><small>${esc(x.size)}${x.customLabel?` · ${esc(x.customLabel)}`:''}</small></span><span>${money(x.price)} <button type="button" data-remove="${i}" aria-label="Eliminar ${esc(x.name)}">✕</button></span></li>`).join('')||'<li>Tu carrito está vacío. Elige productos del catálogo.</li>';
-  $('cart-total-price').textContent=money(cart.reduce((a,x)=>a+x.price,0));
+  cart.forEach(it=>{const r=REG[it.key];if(!r)return;it.size=r.labels[it.idx];it.unit=unitPrice(it.key,it.idx,it.custom);it.price=it.unit*it.qty});
+  try{localStorage.setItem('naryae_cart2',JSON.stringify(cart))}catch{}
+  const live=cart.filter(x=>!isSold(x.key,x.idx)),n=live.reduce((a,i)=>a+i.qty,0);
+  document.querySelectorAll('[data-cart-count]').forEach(x=>x.textContent=n);$('fab-count').textContent=n;$('fab-count').hidden=!n;
+  $('cart-items').innerHTML=cart.map((x,i)=>{const sold=isSold(x.key,x.idx);return `<li class="cart-item${sold?' is-sold':''}"><div class="ci-main"><strong>${esc(x.key)}</strong><br><small>${esc(x.size)}${x.custom?` · ${esc(x.customLabel)}`:''}${x.note?` · “${esc(x.note)}”`:''}</small>${sold?'<br><small class="ci-warn">⚠️ Agotado: quítalo para enviar el pedido</small>':''}</div><div class="ci-qty" role="group" aria-label="Cantidad de ${esc(x.key)}"><button type="button" data-qminus="${i}" aria-label="Disminuir cantidad">−</button><span aria-live="polite">${x.qty}</span><button type="button" data-qplus="${i}" aria-label="Aumentar cantidad">+</button></div><div class="ci-price">${money(x.price)} <button type="button" data-remove="${i}" aria-label="Eliminar ${esc(x.key)}">✕</button></div></li>`}).join('')||'<li>Tu carrito está vacío. Elige productos del catálogo.</li>';
+  $('cart-total-price').textContent=money(live.reduce((a,x)=>a+x.price,0));
   markCards();
 }
+function changeQty(i,d){const it=cart[i];if(!it)return;it.qty=Math.min(99,Math.max(1,it.qty+d));renderCart()}
  
 // Muestra en cada tarjeta cuántas unidades de ese producto ya están en el carrito
-function markCards(){document.querySelectorAll('.card').forEach(c=>{const n=cart.filter(x=>x.name===c.dataset.name).reduce((a,x)=>a+x.qty,0),el=c.querySelector('.in-cart');if(el){el.hidden=!n;el.textContent=n?`✓ Ya tienes ${n} en tu carrito`:''}})}
+function markCards(){document.querySelectorAll('.card').forEach(c=>{const n=cart.filter(x=>x.key===c.dataset.name).reduce((a,x)=>a+x.qty,0),el=c.querySelector('.in-cart');if(el){el.hidden=!n;el.textContent=n?`✓ Ya tienes ${n} en tu carrito`:''}})}
  
 let toastTimeout;
 function showToast(message){const toast=$('toast');$('toast-msg').textContent=message;toast.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.classList.remove('show'),4500)}
@@ -326,18 +369,26 @@ function confirmAdd(b,c,qty){
 }
  
 /* ===== EVENTOS ===== */
-document.addEventListener('change',e=>{if(e.target.matches('.size,.qty,.custom'))updatePrice(e.target)});
+document.addEventListener('change',e=>{
+  if(e.target.matches('.size,.qty,.custom'))updatePrice(e.target);
+  if(e.target.matches('.custom')){const em=e.target.closest('.card').querySelector('.emb');if(em){em.hidden=!e.target.checked;if(e.target.checked)em.focus()}}
+  if(e.target.name==='f-ship')$('ship-fields').hidden=e.target.value!=='despacho';
+});
 document.addEventListener('click',e=>{
   const b=e.target.closest('.add');
   if(b){
-    const c=b.closest('.card'),s=c.querySelector('.size'),p=JSON.parse(c.dataset.prices),qty=+c.querySelector('.qty').value,custom=c.querySelector('.custom')?.checked||false;
-    const price=((p[+s.value]??p[0]??0)+(custom?+c.dataset.custom:0))*qty;
-    cart.push({name:c.dataset.name,size:s.selectedOptions[0].text,qty,price,customLabel:custom?c.querySelector('.custom').parentElement.textContent.trim().replace(/\s*\(\+.*\)$/,''):''});
+    const c=b.closest('.card'),s=c.querySelector('.size'),key=c.dataset.name,idx=+s.value,qty=+c.querySelector('.qty').value,custom=c.querySelector('.custom')?.checked||false;
+    const note=custom?(c.querySelector('.emb')?.value.trim().slice(0,60)||''):'';
+    let it=cart.find(x=>x.key===key&&x.idx===idx&&x.custom===custom&&x.note===note);
+    if(it)it.qty=Math.min(99,it.qty+qty);else{it={key,idx,size:REG[key].labels[idx],qty,custom,customLabel:custom?REG[key].customLabel:'',note,unit:0,price:0};cart.push(it)}
     renderCart();
+    track('add_to_cart',{ecommerce:{currency:'CLP',value:unitPrice(key,idx,custom)*qty,items:[{...ecom(it),quantity:qty}]}});
     confirmAdd(b,c,qty);
     return;
   }
-  if(e.target.dataset.remove!==undefined){cart.splice(+e.target.dataset.remove,1);renderCart()}
+  if(e.target.dataset.remove!==undefined){const it=cart[+e.target.dataset.remove];if(it)track('remove_from_cart',{ecommerce:{currency:'CLP',value:it.price,items:[ecom(it)]}});cart.splice(+e.target.dataset.remove,1);renderCart()}
+  if(e.target.dataset.qplus!==undefined)changeQty(+e.target.dataset.qplus,1);
+  if(e.target.dataset.qminus!==undefined)changeQty(+e.target.dataset.qminus,-1);
   if(e.target.id==='clear-cart-btn'){cart=[];renderCart()}
   if(e.target.closest('[data-open-privacy]'))openPrivacy(e.target.closest('[data-open-privacy]'));
   if(e.target.closest('.faq-question')){const f=e.target.closest('.faq-item');document.querySelectorAll('.faq-item.is-open').forEach(o=>{if(o!==f){o.classList.remove('is-open');o.querySelector('button').setAttribute('aria-expanded','false')}});f.classList.toggle('is-open');f.querySelector('button').setAttribute('aria-expanded',f.classList.contains('is-open'))}
@@ -351,10 +402,19 @@ $('tabs').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if
 ['f-name','f-msg'].forEach(id=>$(id).addEventListener('input',()=>{$('err').textContent=''}));
 $('quote-form').addEventListener('submit',e=>{
   e.preventDefault();
-  const name=$('f-name').value.trim();
-  if(!name||!cart.length){$('err').textContent=!name?'Escribe tu nombre.':'Tu carrito está vacío.';return}
+  const name=$('f-name').value.trim(),ship=document.querySelector('input[name="f-ship"]:checked').value,sector=$('f-sector').value,addr=$('f-addr').value.trim(),school=$('f-school').value,grade=$('f-grade').value.trim();
+  const live=cart.filter(x=>!isSold(x.key,x.idx));
+  const bad=!name?'Escribe tu nombre.':!cart.length?'Tu carrito está vacío.':live.length<cart.length?'Quita del carrito los productos agotados para enviar el pedido.':(ship==='despacho'&&(!sector||!addr))?'Para el despacho indica tu sector y tu dirección.':'';
+  if(bad){$('err').textContent=bad;return}
   $('err').textContent='';
-  const text=`¡Hola Naryae®! Soy ${name} y quiero cotizar:\n`+cart.map(x=>`${x.qty}x ${x.name} (${x.size}) - ${money(x.price)}`).join('\n')+`\nTotal estimado: ${money(cart.reduce((a,x)=>a+x.price,0))}\n${$('f-msg').value}`;
+  const total=live.reduce((a,x)=>a+x.price,0);
+  const lines=live.map(x=>`${x.qty}x ${x.key} (${x.size})${x.custom?` + ${x.customLabel}`:''}${x.note?` — Bordar: “${x.note}”`:''} - ${money(x.price)}`);
+  const extra=[`Entrega: ${ship==='despacho'?`Despacho a domicilio — ${sector} — ${addr}`:'Retiro en el taller'}`];
+  if(school)extra.push(`Colegio: ${school}`);if(grade)extra.push(`Curso: ${grade}`);
+  const msg=$('f-msg').value.trim();
+  const text=`¡Hola Naryae®! Soy ${name} y quiero cotizar:\n`+lines.join('\n')+`\nTotal estimado: ${money(total)}\n`+extra.join('\n')+(msg?`\nComentarios: ${msg}`:'');
+  track('whatsapp_order_sent',{ecommerce:{currency:'CLP',value:total,items:live.map(ecom)},delivery:ship,school:school||'ninguno'});
+  track('generate_lead',{currency:'CLP',value:total});
   window.open('https://wa.me/56934486112?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 });
  
@@ -374,7 +434,7 @@ function syncCalcType(){
   calcOutput.textContent='Ingresa una medida para sugerir la talla.';
 }
 calcType.addEventListener('change',syncCalcType);
-$('open-size-guide').addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('close-size-modal').focus()});
+$('open-size-guide').addEventListener('click',()=>{track('size_calculator_open');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('close-size-modal').focus()});
 function closeCalc(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';$('open-size-guide').focus()}
 $('close-size-modal').addEventListener('click',closeCalc);
 modal.addEventListener('click',e=>{if(e.target===modal)closeCalc()});
@@ -460,13 +520,13 @@ function initEffects(){
 /* ===== PANEL DE ADMINISTRADOR ===== */
 const h53=(str,seed=0)=>{let h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(let i=0,ch;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)};
 let admTries=0,admLock=0,edKey=null,edPhoto='';
-function renderAll(){renderStatic();renderCatalog();renderCart()}
+function renderAll(){renderStatic();renderCatalog();renderCart();renderNotice()}
 function openAdm(html,focusSel){$('adm-box').innerHTML=html;const m=$('adm-modal');m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';const f=focusSel&&$('adm-box').querySelector(focusSel);if(f)f.focus()}
 function closeAdm(){const m=$('adm-modal');m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow=''}
 function syncAdminUI(){
   const bar=$('admin-bar');bar.hidden=!isAdmin;document.body.classList.toggle('admin-on',isAdmin);if(!isAdmin)return;
   const dirty=JSON.stringify(OV)!==JSON.stringify(cleanOv(SAVED_OVERRIDES));
-  bar.innerHTML=`<strong>🔧 Modo administrador</strong>${dirty?'<span class="adm-dirty">● Cambios sin publicar</span>':''}<button type="button" class="btn" data-adm="backup">Publicar / respaldo</button><button type="button" class="btn ghost" data-adm="reset">Descartar cambios</button><button type="button" class="btn ghost" data-adm="logout">Salir</button>`;
+  bar.innerHTML=`<strong>🔧 Modo administrador</strong>${dirty?'<span class="adm-dirty">● Cambios sin publicar</span>':''}<button type="button" class="btn ghost" data-adm="percent">% Precios</button><button type="button" class="btn ghost" data-adm="notice">📣 Aviso</button><button type="button" class="btn" data-adm="backup">Publicar / respaldo</button><button type="button" class="btn ghost" data-adm="reset">Descartar cambios</button><button type="button" class="btn ghost" data-adm="logout">Salir</button>`;
 }
 function persist(next){
   try{localStorage.setItem('naryae_ov',JSON.stringify(next))}catch{const m=$('ed-msg')||$('bk-msg');if(m)m.textContent='No se pudo guardar: las fotos ocupan demasiado espacio. Usa fotos más livianas o pega su dirección (URL).';return false}
@@ -477,14 +537,15 @@ function setPrev(){$('ed-prev').innerHTML=edPhoto&&okPhoto(edPhoto)?`<img class=
 function fileToDataURL(file,max=520){return new Promise((res,rej)=>{const img=new Image(),url=URL.createObjectURL(file);img.onload=()=>{const k=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);c.getContext('2d').drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);res(c.toDataURL('image/jpeg',.72))};img.onerror=()=>rej(new Error('img'));img.src=url})}
 function openEditor(key){
   const r=REG[key];if(!r)return;edKey=key;const o=OV[key]||{};edPhoto=o.photo||'';
-  const similar=Object.keys(REG).filter(k=>REG[k].sig===r.sig).length;
-  const rows=r.labels.map((l,i)=>`<label class="adm-row"><span>${esc(l)}</span><input type="number" min="0" step="500" inputmode="numeric" data-pi="${i}" value="${o.prices?.[i]??r.orig[i]}"></label>`).join('');
-  openAdm(`<button type="button" class="modal-close" data-adm-close aria-label="Cerrar">✕</button><h3 style="color:var(--deep)">Editar: ${esc(r.name)}</h3><form id="adm-edit" novalidate><label class="checkbox-label" style="margin-top:12px"><input type="checkbox" id="ed-sold"${o.sold?' checked':''}> Marcar como agotado</label><h4 class="adm-h">Precios (CLP)</h4>${rows}${r.custom?`<label class="adm-row"><span>${esc(r.customLabel)} (recargo)</span><input type="number" min="0" step="500" inputmode="numeric" id="ed-cust" value="${o.custom??r.custom}"></label>`:''}${similar>1?`<label class="checkbox-label" style="margin-top:10px"><input type="checkbox" id="ed-all"> Aplicar estos precios a los ${similar} productos que comparten esta lista de precios</label>`:''}<h4 class="adm-h">Foto</h4><div id="ed-prev"></div><input type="file" id="ed-file" accept="image/*" style="margin-top:8px"><input type="text" id="ed-url" placeholder="o pega la dirección (URL) de la foto" value="${edPhoto&&!edPhoto.startsWith('data:')?esc(edPhoto):''}" style="margin-top:8px"><button type="button" class="btn ghost" data-adm="removephoto" style="color:var(--ink);margin-top:8px;min-height:38px">Quitar foto</button><p id="ed-msg" role="alert" style="color:#b3261e;font-weight:600;margin:8px 0 0"></p><div class="adm-actions"><button class="btn green">Guardar</button><button type="button" class="btn ghost" data-adm="restore" style="color:var(--green)">Restaurar original</button><button type="button" class="btn ghost" data-adm-close style="color:var(--ink)">Cancelar</button></div></form>`,'#ed-sold');
+  const similar=Object.keys(REG).filter(k=>REG[k].sig===r.sig).length,ss=o.soldSizes||[];
+  const rows=r.labels.map((l,i)=>`<div class="adm-row"><label for="pi${i}">${esc(l)}</label><input type="number" min="0" step="500" inputmode="numeric" id="pi${i}" data-pi="${i}" value="${o.prices?.[i]??r.orig[i]}"><label class="checkbox-label adm-chk"><input type="checkbox" data-ps="${i}"${ss.includes(i)?' checked':''}> Agotada</label></div>`).join('');
+  openAdm(`<button type="button" class="modal-close" data-adm-close aria-label="Cerrar">✕</button><h3 style="color:var(--deep)">Editar: ${esc(r.name)}</h3><form id="adm-edit" novalidate><label class="checkbox-label" style="margin-top:12px"><input type="checkbox" id="ed-sold"${o.sold?' checked':''}> Marcar TODO el producto como agotado</label><h4 class="adm-h">Precios (CLP) y stock por talla</h4>${rows}${r.custom?`<div class="adm-row two"><label for="ed-cust">${esc(r.customLabel)} (recargo)</label><input type="number" min="0" step="500" inputmode="numeric" id="ed-cust" value="${o.custom??r.custom}"></div>`:''}${similar>1?`<label class="checkbox-label" style="margin-top:10px"><input type="checkbox" id="ed-all"> Aplicar estos precios a los ${similar} productos que comparten esta lista de precios</label>`:''}<h4 class="adm-h">Foto</h4><div id="ed-prev"></div><input type="file" id="ed-file" accept="image/*" style="margin-top:8px"><input type="text" id="ed-url" placeholder="o pega la dirección (URL) de la foto" value="${edPhoto&&!edPhoto.startsWith('data:')?esc(edPhoto):''}" style="margin-top:8px"><button type="button" class="btn ghost" data-adm="removephoto" style="color:var(--ink);margin-top:8px;min-height:38px">Quitar foto</button><p id="ed-msg" role="alert" style="color:#b3261e;font-weight:600;margin:8px 0 0"></p><div class="adm-actions"><button class="btn green">Guardar</button><button type="button" class="btn ghost" data-adm="restore" style="color:var(--green)">Restaurar original</button><button type="button" class="btn ghost" data-adm-close style="color:var(--ink)">Cancelar</button></div></form>`,'#ed-sold');
   setPrev();
 }
 function saveEditor(){
   const r=REG[edKey],box=$('adm-box');
   const prices=[...box.querySelectorAll('[data-pi]')].map(i=>Math.max(0,Math.round(+i.value)||0));
+  const soldSizes=[...box.querySelectorAll('[data-ps]:checked')].map(i=>+i.dataset.ps);
   const cust=r.custom?Math.max(0,Math.round(+box.querySelector('#ed-cust').value)||0):null;
   const targets=box.querySelector('#ed-all')?.checked?Object.keys(REG).filter(k=>REG[k].sig===r.sig):[edKey];
   const next={...OV};
@@ -492,11 +553,57 @@ function saveEditor(){
     const o={...(next[k]||{})};
     if(prices.every((p,i)=>p===REG[k].orig[i]))delete o.prices;else o.prices=prices;
     if(r.custom){if(cust===REG[k].custom)delete o.custom;else o.custom=cust}
-    if(k===edKey){if(box.querySelector('#ed-sold').checked)o.sold=true;else delete o.sold;if(edPhoto)o.photo=edPhoto;else delete o.photo}
+    if(k===edKey){if(box.querySelector('#ed-sold').checked)o.sold=true;else delete o.sold;if(soldSizes.length)o.soldSizes=soldSizes;else delete o.soldSizes;if(edPhoto)o.photo=edPhoto;else delete o.photo}
     if(Object.keys(o).length)next[k]=o;else delete next[k];
   });
   if(!persist(next))return;
   closeAdm();renderAll();syncAdminUI();showToast('Cambios guardados como borrador. Usa “Publicar / respaldo” para que los vean los clientes.');
+}
+function pctPreview(){
+  const el=$('pc-prev'),raw=$('pc-val').value,pct=+raw,sc=$('pc-scope').value,rd=+$('pc-round').value;
+  const keys=Object.keys(REG).filter(k=>sc==='all'||REG[k].group===sc);
+  if(!raw||!Number.isFinite(pct)){el.textContent='Escribe un porcentaje para ver un ejemplo.';return}
+  const k=keys[0],r=REG[k],base=OV[k]?.prices?.[0]??r.orig[0];
+  el.textContent=`Afecta a ${keys.length} productos. Ejemplo: ${k} (${r.labels[0]}): ${fmt(base)} → ${fmt(Math.max(0,Math.round(base*(1+pct/100)/rd)*rd))}`;
+}
+function openPercent(){
+  const groups=[...categories.map(c=>c[0]),'Uniformes completos','Prendas individuales'];
+  openAdm(`<button type="button" class="modal-close" data-adm-close aria-label="Cerrar">✕</button><h3 style="color:var(--deep)">Subir o bajar precios por porcentaje</h3><p style="color:var(--muted);font-size:14px">Número positivo para subir (10 = +10 %) y negativo para bajar (-5 = −5 %). Se calcula sobre los precios actuales.</p><form id="adm-pct" novalidate><label class="adm-row two"><span>Porcentaje (%)</span><input type="number" step="0.5" id="pc-val" placeholder="Ej.: 10"></label><label class="adm-row two"><span>Aplicar a</span><select id="pc-scope"><option value="all">Todos los productos</option>${groups.map(g=>`<option>${esc(g)}</option>`).join('')}</select></label><label class="adm-row two"><span>Redondear a</span><select id="pc-round"><option value="100">$100</option><option value="500">$500</option><option value="1000">$1.000</option></select></label><label class="checkbox-label"><input type="checkbox" id="pc-cust" checked> Incluir también el recargo de bordado</label><p id="pc-prev" class="modal-note" style="margin-top:10px">Escribe un porcentaje para ver un ejemplo.</p><p id="pc-msg" role="alert" style="color:#b3261e;font-weight:600;margin:8px 0 0"></p><div class="adm-actions"><button class="btn green">Aplicar</button><button type="button" class="btn ghost" data-adm-close style="color:var(--ink)">Cancelar</button></div></form>`,'#pc-val');
+}
+function applyPercent(){
+  const pct=+$('pc-val').value,sc=$('pc-scope').value,rd=+$('pc-round').value,inc=$('pc-cust').checked;
+  if(!$('pc-val').value||!Number.isFinite(pct)||pct===0||pct<-90||pct>300){$('pc-msg').textContent='Escribe un porcentaje válido (entre -90 y 300, distinto de 0).';return}
+  const keys=Object.keys(REG).filter(k=>sc==='all'||REG[k].group===sc);
+  if(!confirm(`¿${pct>0?'Subir':'Bajar'} ${Math.abs(pct)} % los precios de ${keys.length} productos?`))return;
+  const f=1+pct/100,next={...OV},rnd=n=>Math.max(0,Math.round(n*f/rd)*rd);
+  keys.forEach(k=>{
+    const r=REG[k],o={...(next[k]||{})};
+    const np=r.orig.map((p,i)=>rnd(o.prices?.[i]??p));
+    if(np.every((p,i)=>p===r.orig[i]))delete o.prices;else o.prices=np;
+    if(inc&&r.custom){const nc=rnd(o.custom??r.custom);if(nc===r.custom)delete o.custom;else o.custom=nc}
+    if(Object.keys(o).length)next[k]=o;else delete next[k];
+  });
+  if(!persist(next))return;
+  closeAdm();renderAll();syncAdminUI();showToast(`Precios actualizados (${pct>0?'+':''}${pct} %) en ${keys.length} productos. Falta publicarlos.`);
+}
+function openNotice(){
+  const b=OV._cfg?.banner||{on:false,text:''};
+  openAdm(`<button type="button" class="modal-close" data-adm-close aria-label="Cerrar">✕</button><h3 style="color:var(--deep)">Aviso de temporada</h3><p style="color:var(--muted);font-size:14px">Aparece en la parte de arriba de la página. Los clientes pueden cerrarlo.</p><form id="adm-notice"><label class="checkbox-label"><input type="checkbox" id="nt-on"${b.on?' checked':''}> Mostrar el aviso</label><label for="nt-text" style="display:block;margin-top:10px;font-weight:600;font-size:14px">Texto del aviso (máx. 200 letras)</label><textarea id="nt-text" maxlength="200" rows="3">${esc(b.text||'Temporada alta: pide tu uniforme con anticipación para asegurar tu cupo y fecha de entrega.')}</textarea><div class="adm-actions"><button class="btn green">Guardar</button><button type="button" class="btn ghost" data-adm-close style="color:var(--ink)">Cancelar</button></div></form>`,'#nt-text');
+}
+function saveNotice(){
+  const on=$('nt-on').checked,text=$('nt-text').value.trim().slice(0,200),next={...OV};
+  if(on||OV._cfg)next._cfg={banner:{on,text}};else delete next._cfg;
+  if(!persist(next))return;
+  closeAdm();renderNotice();syncAdminUI();showToast(on?'Aviso guardado como borrador. Falta publicarlo.':'Aviso desactivado.');
+}
+function renderNotice(){
+  const b=OV._cfg?.banner,n=$('notice');let dis='';try{dis=sessionStorage.getItem('naryae_notice')||''}catch{}
+  const show=!!(b&&b.on&&b.text&&dis!==b.text);n.hidden=!show;if(show)$('notice-text').textContent=b.text;
+}
+function fillFormLists(){
+  $('f-school').insertAdjacentHTML('beforeend',schools.map(s=>`<option>${esc(s)}</option>`).join('')+'<option>Otro colegio (indicar en comentarios)</option>');
+  const ship=categories.find(c=>c[0]==='Servicios de Envíos')[1][0][2].map(x=>x[0]);
+  $('f-sector').insertAdjacentHTML('beforeend',ship.map(x=>`<option>${esc(x)}</option>`).join('')+'<option>Otro sector (indicar en comentarios)</option>');
 }
 function openBackup(){
   const line=`const SAVED_OVERRIDES=${JSON.stringify(OV)};`,kb=Math.max(1,Math.round(line.length/1024));
@@ -506,6 +613,8 @@ function admAction(a){
   if(a==='logout'){isAdmin=false;try{sessionStorage.removeItem('naryae_admin')}catch{}syncOV();renderAll();syncAdminUI();showToast('Saliste del modo administrador.')}
   else if(a==='reset'){if(confirm('¿Descartar los cambios que no has publicado?')){try{localStorage.removeItem('naryae_ov')}catch{}syncOV();renderAll();syncAdminUI()}}
   else if(a==='backup')openBackup();
+  else if(a==='percent')openPercent();
+  else if(a==='notice')openNotice();
   else if(a==='removephoto'){edPhoto='';$('ed-url').value='';$('ed-file').value='';setPrev()}
   else if(a==='restore'){const next={...OV};delete next[edKey];if(persist(next)){closeAdm();renderAll();syncAdminUI()}}
   else if(a==='copy'){const t=$('bk-text');t.select();(navigator.clipboard?navigator.clipboard.writeText(t.value):Promise.reject()).catch(()=>document.execCommand('copy')).finally(()=>{$('bk-msg').textContent='Texto copiado.'})}
@@ -517,6 +626,8 @@ function admAction(a){
 }
 document.addEventListener('click',e=>{
   const t=e.target;
+  if(t.closest('[data-notice-close]')){try{sessionStorage.setItem('naryae_notice',OV._cfg?.banner?.text||'')}catch{}$('notice').hidden=true;return}
+  const ln=t.closest('a[href^="https://wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(ln)track('contact_click',{method:ln.href.startsWith('tel:')?'phone':ln.href.startsWith('mailto:')?'email':'whatsapp'});
   if(t.closest('#admin-open')){if(!isAdmin)openLogin();return}
   const ed=t.closest('[data-edit]');if(ed&&isAdmin){openEditor(ed.dataset.edit);return}
   const a=t.closest('[data-adm]');if(a){admAction(a.dataset.adm);return}
@@ -530,14 +641,17 @@ document.addEventListener('submit',e=>{
     else{admTries++;$('adm-err').textContent='Clave incorrecta.';$('adm-pw').value='';if(admTries>=5){admLock=Date.now()+30000;admTries=0}}
   }
   if(e.target.id==='adm-edit'){e.preventDefault();saveEditor()}
+  if(e.target.id==='adm-pct'){e.preventDefault();applyPercent()}
+  if(e.target.id==='adm-notice'){e.preventDefault();saveNotice()}
 });
+document.addEventListener('input',e=>{if(e.target.closest&&e.target.closest('#adm-pct'))pctPreview()});
 document.addEventListener('change',async e=>{
   if(e.target.id==='ed-file'&&e.target.files[0]){try{edPhoto=await fileToDataURL(e.target.files[0]);$('ed-url').value='';$('ed-msg').textContent='';setPrev()}catch{$('ed-msg').textContent='No se pudo leer esa imagen.'}}
   if(e.target.id==='ed-url'){const v=e.target.value.trim();if(!v)return;if(okPhoto(v)&&!v.startsWith('data:')){edPhoto=v;$('ed-msg').textContent='';setPrev()}else $('ed-msg').textContent='Esa dirección no parece una imagen válida (debe ser https:// o terminar en .jpg, .png, .webp).'}
 });
  
 $('yr').textContent=new Date().getFullYear();
-syncOV();syncAdminUI();renderStatic();renderCatalog();renderCart();initEffects();
+buildRegistry();syncOV();syncAdminUI();fillFormLists();renderNotice();renderStatic();renderCatalog();renderCart();initEffects();
 // Alternativa al candado: abrir la página con #admin al final de la dirección
 const openFromHash=()=>{if(location.hash==='#admin'&&!isAdmin)openLogin()};openFromHash();addEventListener('hashchange',openFromHash);
 })();
