@@ -104,6 +104,8 @@
     .adm-row{display:grid;grid-template-columns:1fr 130px;gap:10px;align-items:center;margin:8px 0;font-size:14px}
     .adm-h{margin:16px 0 6px;font-family:'Bricolage Grotesque',sans-serif;color:var(--deep)}
     .adm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    footer{padding-bottom:84px}
+    .admin-on .toast{bottom:170px}
     @media(max-width:700px){.pimg{aspect-ratio:16/10}}
   </style>
 </head>
@@ -126,9 +128,9 @@
   <div class="wrap footer-inner">
     <div>© <span id="yr"></span> Confecciones Naryae® · Puerto Montt, Chile · <a href="https://www.instagram.com/naryae24.02" target="_blank" rel="noopener noreferrer">@naryae24.02</a></div>
     <div class="footer-links">
+      <button type="button" class="footer-link-btn lock-btn" id="admin-open" aria-label="Acceso administrador" title="Acceso administrador">🔒</button>
       <button type="button" class="footer-link-btn" data-open-privacy>Política de Privacidad</button>
       <!-- Aquí añadiremos luego el botón de Política de Compra -->
-      <button type="button" class="footer-link-btn lock-btn" id="admin-open" aria-label="Acceso administrador" title="Acceso administrador">🔒</button>
     </div>
   </div>
 </footer><div class="fab"><a id="fab-link" href="#carrito-seccion">🛒<span class="fab-text"> Ver Carrito</span> <span class="fab-count" id="fab-count" hidden>0</span></a></div>
@@ -462,7 +464,7 @@ function renderAll(){renderStatic();renderCatalog();renderCart()}
 function openAdm(html,focusSel){$('adm-box').innerHTML=html;const m=$('adm-modal');m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';const f=focusSel&&$('adm-box').querySelector(focusSel);if(f)f.focus()}
 function closeAdm(){const m=$('adm-modal');m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow=''}
 function syncAdminUI(){
-  const bar=$('admin-bar');bar.hidden=!isAdmin;if(!isAdmin)return;
+  const bar=$('admin-bar');bar.hidden=!isAdmin;document.body.classList.toggle('admin-on',isAdmin);if(!isAdmin)return;
   const dirty=JSON.stringify(OV)!==JSON.stringify(cleanOv(SAVED_OVERRIDES));
   bar.innerHTML=`<strong>🔧 Modo administrador</strong>${dirty?'<span class="adm-dirty">● Cambios sin publicar</span>':''}<button type="button" class="btn" data-adm="backup">Publicar / respaldo</button><button type="button" class="btn ghost" data-adm="reset">Descartar cambios</button><button type="button" class="btn ghost" data-adm="logout">Salir</button>`;
 }
@@ -524,7 +526,7 @@ document.addEventListener('submit',e=>{
   if(e.target.id==='adm-login'){
     e.preventDefault();
     if(Date.now()<admLock){$('adm-err').textContent='Demasiados intentos. Espera unos segundos.';return}
-    if(h53('naryae:'+$('adm-pw').value.trim())===ADMIN_HASH){admTries=0;isAdmin=true;try{sessionStorage.setItem('naryae_admin','1')}catch{}closeAdm();syncOV();renderAll();syncAdminUI();showToast('Modo administrador activado.')}
+    if(h53('naryae:'+$('adm-pw').value.trim())===ADMIN_HASH){admTries=0;isAdmin=true;try{sessionStorage.setItem('naryae_admin','1')}catch{}closeAdm();syncOV();renderAll();syncAdminUI();$('catalogo').scrollIntoView({behavior:'smooth'});showToast('✅ Modo administrador activado. Toca “✏️ Editar” en cualquier producto.')}
     else{admTries++;$('adm-err').textContent='Clave incorrecta.';$('adm-pw').value='';if(admTries>=5){admLock=Date.now()+30000;admTries=0}}
   }
   if(e.target.id==='adm-edit'){e.preventDefault();saveEditor()}
@@ -536,6 +538,8 @@ document.addEventListener('change',async e=>{
  
 $('yr').textContent=new Date().getFullYear();
 syncOV();syncAdminUI();renderStatic();renderCatalog();renderCart();initEffects();
+// Alternativa al candado: abrir la página con #admin al final de la dirección
+const openFromHash=()=>{if(location.hash==='#admin'&&!isAdmin)openLogin()};openFromHash();addEventListener('hashchange',openFromHash);
 })();
 </script>
 </body>
