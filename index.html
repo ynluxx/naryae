@@ -266,8 +266,6 @@
     .toast-link { flex: none; background: var(--clover); color: #0b2214; padding: 6px 14px; border-radius: 99px; text-decoration: none; font-size: 13px; font-weight: 700; }
 
     /* ===== MEDIA QUERIES & MÓVIL ===== */
-    .swipe-hint { display: none; }
-    
     @media(max-width: 900px) {
       .cart-pill { display: inline-flex; }
       .burger { display: block; }
@@ -300,17 +298,17 @@
 
       .tools { gap: 12px; }
       .tools .tabs, .ind-tabs { flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -18px; padding: 2px 18px 10px; }
-      .tabs::-webkit-scrollbar, #schools-grid::-webkit-scrollbar, #individual-grid::-webkit-scrollbar, .reviews-grid::-webkit-scrollbar { display: none; }
+      .tabs::-webkit-scrollbar, .reviews-grid::-webkit-scrollbar { display: none; }
       .chip { flex: none; white-space: nowrap; }
       
       .search { min-width: 100%; }
+      .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
       
-      #schools-grid, #individual-grid, .reviews-grid {
+      .reviews-grid {
         display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 18px;
         gap: 16px; margin: 0 -18px; padding: 4px 18px 16px; scrollbar-width: none;
       }
-      #schools-grid > .card, #individual-grid > .card, .reviews-grid > .review-card { flex: 0 0 85%; scroll-snap-align: start; }
-      .swipe-hint { display: block; font-size: 13px; color: var(--muted); margin-bottom: 10px; font-weight: 500; }
+      .reviews-grid > .review-card { flex: 0 0 85%; scroll-snap-align: start; }
       
       .fab-text { display: none; }
       .fab a { padding: 14px 18px; }
@@ -335,9 +333,9 @@
     <a class="cart-pill" href="#carrito-seccion" aria-label="Ir al carrito">🛒 <span data-cart-count>0</span></a>
     <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">Menú</button>
     <nav id="nav" aria-label="Principal">
-      <a href="#catalogo">Catálogo</a>
-      <a href="#colegios">Uniformes Completos</a>
-      <a href="#prendas-sueltas">Prendas Individuales</a>
+      <a href="#catalogo">Catálogo General</a>
+      <a href="#colegios">Uniformes Escolares</a>
+      <a href="#prendas-sueltas">Prendas Sueltas</a>
       <a href="#carrito-seccion">Mi Carrito (<span data-cart-count>0</span>)</a>
       <a href="#resenas">Reseñas</a>
       <a href="#faq">Preguntas</a>
@@ -353,10 +351,10 @@
     <div class="wrap patch">
       <span class="script">Style is an art</span>
       <h1>Confeccionamos con calidad</h1>
-      <p>Uniformes escolares completos o prendas individuales, ropa personalizada, delantales y más. Arma tu pedido y cotiza directamente por WhatsApp.</p>
+      <p>Catálogo completo con todos los servicios, uniformes completos y prendas individuales. Arma tu pedido y cotiza directamente por WhatsApp.</p>
       <div class="cta">
         <a class="btn" href="#catalogo">Ver catálogo general</a>
-        <a class="btn ghost" href="#prendas-sueltas">Prendas sueltas</a>
+        <a class="btn ghost" href="#colegios">Uniformes colegios</a>
         <a class="btn ghost" href="#carrito-seccion">Ir al carrito</a>
       </div>
       <ul class="stats">
@@ -379,15 +377,15 @@
 
   <section id="catalogo">
     <div class="wrap">
-      <h2>Catálogo Interactivo</h2>
-      <p class="lead">Explora arreglos, despachos, ropa corporativa y personalizada, accesorios, delantales, hogar y regalos.</p>
+      <h2>Catálogo General y Servicios</h2>
+      <p class="lead">Explora envíos, arreglos de ropa, ropa corporativa y personalizada, accesorios, delantales, hogar y regalos.</p>
       <button class="btn ghost" id="open-size-guide" type="button" style="margin-bottom:18px;color:var(--green)">📏 Calculadora por Medida</button>
       <p class="price-disclaimer"><strong>Importante:</strong> los precios son referenciales. El valor final se confirma por WhatsApp y puede variar según colegio, talla, materiales, diseño y disponibilidad.</p>
       <div class="tools">
         <div id="tabs" class="tabs" role="group" aria-label="Filtrar por categoría"></div>
         <div class="search">
           <label for="q" style="display:none">Buscar en el catálogo</label>
-          <input id="q" type="search" placeholder="Buscar: arreglo, despacho, polar…" aria-label="Buscar en el catálogo">
+          <input id="q" type="search" placeholder="Buscar: arreglo, despacho, polar, delantal…" aria-label="Buscar en el catálogo">
         </div>
       </div>
       <div class="grid" id="grid" aria-live="polite"></div>
@@ -399,7 +397,6 @@
       <h2>Uniformes por Colegio y Escuela (Set Completo)</h2>
       <p class="lead">Encuentra el set institucional de cada establecimiento y selecciona la talla según el ancho de pecho en plano.</p>
       <p class="price-disclaimer">Precios referenciales; el valor final se confirma por WhatsApp.</p>
-      <p class="swipe-hint">Desliza para ver más colegios →</p>
       <div class="grid" id="schools-grid"></div>
     </div>
   </section>
@@ -410,7 +407,6 @@
       <p class="lead">¿No necesitas el uniforme completo? Elige camisas, poleras, polerones, pantalones o faldas por separado.</p>
       <p class="price-disclaimer">Precios referenciales sujetos a las especificaciones de cada colegio.</p>
       <div class="tabs ind-tabs" id="ind-tabs" role="group" aria-label="Filtrar prendas por categoría"></div>
-      <p class="swipe-hint">Desliza para ver más →</p>
       <div class="grid" id="individual-grid"></div>
     </div>
   </section>
@@ -454,7 +450,6 @@
     <div class="wrap">
       <h2>Lo que dicen nuestros clientes</h2>
       <p class="lead">Opiniones de familias y clientes que confían en nuestras confecciones en Puerto Montt.</p>
-      <p class="swipe-hint">Desliza para ver más →</p>
       <div class="reviews-grid">
         <article class="review-card">
           <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
