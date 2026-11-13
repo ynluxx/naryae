@@ -458,6 +458,80 @@ document.addEventListener('keydown',e=>{
   if(privacyModal.classList.contains('open'))closePrivacy();
   if($('adm-modal').classList.contains('open'))closeAdm();
 });
+<!-- Modal Política de Compra y Cambios -->
+<div class="modal-overlay" id="purchase-modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="purchase-title">
+    <button class="modal-close" id="close-purchase-modal" type="button" aria-label="Cerrar política de compra">✕</button>
+    <h3 id="purchase-title" style="color:var(--deep)">Política de Compra y Cambios — Confecciones Naryae®</h3>
+    <div class="legal-body">
+      <h4>1. Validez de precios y cotizaciones</h4>
+      <p>Todos los precios publicados en este sitio web son <strong>referenciales</strong>. El valor final de las prendas, uniformes o servicios se confirma directamente al coordinar la cotización a través de nuestro WhatsApp oficial (+56 9 3448 6112). Los precios pueden variar según la disponibilidad de materiales, tallas especiales o requerimientos específicos del diseño.</p>
+      
+      <h4>2. Abonos, reservas y cancelación de pedidos</h4>
+      <p>Para asegurar un cupo en la agenda de confección (especialmente en temporada alta) y comenzar la elaboración de los pedidos, se solicita un <strong>abono inicial del 50%</strong>. El saldo restante se cancela al momento de retirar el producto en el taller o antes de realizar el despacho a domicilio en Puerto Montt. En caso de que el cliente decida cancelar un pedido una vez confirmado el abono y habiendo iniciado la compra de materiales o la confección, no se realizará la devolución del abono, ya que este cubre los insumos y horas de trabajo destinadas al encargo.</p>
+      
+      <h4>3. Plazos de entrega</h4>
+      <p>Los plazos estimados se informan al momento de confirmar el pedido (generalmente entre 3 a 5 días hábiles en temporadas normales). En periodos de alta demanda escolar, estos plazos pueden extenderse, lo cual será debidamente informado y acordado con el cliente.</p>
+      
+      <h4>4. Política de cambios y devoluciones</h4>
+      <p>Para proteger la calidad de nuestras confecciones y debido a que trabajamos con prendas textiles de uso personal y escolar, <strong>no realizamos devoluciones de dinero por satisfacción o cambio de opinión</strong>. Aceptamos solicitudes de cambio de talla en productos estándar exclusivamente bajo las siguientes normativas:</p>
+      <ul>
+        <li><strong>Plazo límite de 1 semana:</strong> El cliente cuenta con un plazo máximo de <strong>7 días corridos</strong> desde la fecha de compra o recepción del pedido para solicitar el cambio.</li>
+        <li><strong>Condiciones físicas del producto:</strong> La prenda debe encontrarse <strong>absolutamente impecable</strong> y en perfectas condiciones: sin uso, sin ningún tipo de manchas, sin marcas de desodorante, sin olor a perfume o detergente, y en su <strong>empaque original</strong>.</li>
+        <li><strong>Verificación previa:</strong> Todo producto sujeto a cambio será rigurosamente inspeccionado al momento de su recepción en el taller. Nos reservamos el derecho de rechazar el cambio si la prenda presenta cualquier signo de uso, daño, alteración o falta de su empaque original.</li>
+        <li><strong>Excepciones de confección a medida y personalización:</strong> Las prendas confeccionadas bajo medidas especiales fuera de nuestro catálogo estándar o personalizadas (con nombres bordados, iniciales, logos o estampados específicos) <strong>no tienen devolución de dinero ni cambio de talla o diseño</strong> bajo ninguna circunstancia. Estas prendas únicamente están sujetas a cambio o reparación en caso de presentar <strong>daños o fallas de fabricación confirmadas</strong> por nuestro taller.</li>
+      </ul>
+
+      <h4>5. Responsabilidad sobre tallas y medidas</h4>
+      <p>La elección final de la talla es responsabilidad del cliente (salvo que la toma de medidas se realice de forma presencial en nuestro taller). Los valores de nuestra calculadora web son orientativos; si se solicita un cambio de talla en una prenda estándar adquirida por error en la selección, los costos de traslado o despacho correrán por cuenta del cliente.</p>
+
+      <h4>6. Almacenamiento y retiro de productos terminados</h4>
+      <p>Una vez notificado que el pedido está listo para retiro, el cliente cuenta con un plazo de <strong>30 días corridos</strong> para retirarlo y cancelar el saldo pendiente. Pasado este tiempo, Confecciones Naryae® no se hace responsable por almacenamiento prolongado ni deterioro natural de las prendas.</p>
+
+      <h4>7. Condiciones para arreglos de ropa</h4>
+      <p>Toda prenda entregada para arreglos o ajustes (dobladillos, cierres, entallados) debe presentarse <strong>limpia y lavada</strong>; por razones de higiene, el taller se reserva el derecho de rechazar prendas sucias o húmedas. Asimismo, en prendas usadas o con telas muy desgastadas, los arreglos se realizan bajo la responsabilidad del cliente respecto a la resistencia del tejido.</p>
+
+      <h4>8. Despachos a domicilio</h4>
+      <p>Los despachos se coordinan previamente dentro de las zonas de cobertura en Puerto Montt. Es responsabilidad del cliente asegurar que haya una persona para recibir el pedido en el horario acordado; de requerirse un segundo intento de envío por ausencia en el domicilio, se cobrará nuevamente la tarifa del despacho.</p>
+
+      <h4>9. Modificaciones posteriores a la entrega</h4>
+      <p>Cualquier ajuste, modificación o alteración solicitada por el cliente una vez que el producto ya ha sido entregado a su entera conformidad y fuera del plazo establecido, se considerará un nuevo trabajo de arreglo y tendrá un costo adicional según el tarifario vigente del taller.</p>
+
+      <h4>10. Materiales provistos por el cliente</h4>
+      <p>Si el cliente proporciona su propia tela o materiales para la confección, Confecciones Naryae® no se hace responsable por defectos en el resultado final si la tela no es adecuada para el modelo elegido (por ejemplo, falta de elasticidad, encogimiento al lavar o roturas por baja calidad del género).</p>
+
+      <h4>11. Demoras por fuerza mayor</h4>
+      <p>Confecciones Naryae® no se hace responsable por retrasos en los plazos de entrega derivados de cortes prolongados de energía, fallas de suministro en servicios básicos, emergencias de fuerza mayor o problemas de salud imprevistos, comprometiéndonos a informar al cliente a la brevedad posible.</p>
+
+      <h4>12. Aprobación de diseños, ortografía, colores y correcciones</h4>
+      <p>Antes de bordar o estampar nombres, iniciales, logos o frases personalizadas, se enviará una confirmación escrita por WhatsApp. Es responsabilidad del cliente revisar y aprobar la ortografía, mayúsculas, tildes y colores del diseño. Si el diseño ya fue aprobado y ejecutado, y el cliente solicita correcciones o cambios debido a una revisión deficiente de su parte, se cobrará una tarifa extra por corrección y re-confección. Una vez validado y bordado/estampado, el taller no asume el costo de los errores ortográficos previamente aprobados.</p>
+
+      <h4>13. Variaciones de tono en telas e insumos</h4>
+      <p>Debido a diferencias naturales en los lotes de fabricación de las telas, cierres e hilos de nuestros proveedores, pueden existir ligeras variaciones de tonalidad entre prendas confeccionadas en distintas fechas o temporadas, sin que esto constituya una falla de fabricación.</p>
+
+      <h4>14. Cuidado y lavado de las prendas</h4>
+      <p>La garantía por fallas de fabricación no cubre daños ocasionados por un mal uso o lavado inadecuado (como uso de cloro, lavado con agua caliente, secadora a alta temperatura o planchado directo sobre estampados y vinilos).</p>
+
+      <h4>15. Uso de fotografías para difusión</h4>
+      <p>El taller se reserva el derecho de fotografiar las prendas confeccionadas para utilizarlas como material visual y promocional en redes sociales o catálogos, resguardando la privacidad de datos personales. Si el cliente no desea que su prenda o diseño sea fotografiado y publicado, debe manifestarlo por escrito al momento de encargar.</p>
+
+      <h4>16. Exclusividad y derechos de diseños personalizados</h4>
+      <p>Los diseños vectoriales, logotipos institucionales o matrices de bordado creadas o adaptadas por Confecciones Naryae® para un cliente, siguen siendo propiedad intelectual del taller, salvo que se acuerde un cobro adicional por la venta de los derechos del diseño digital.</p>
+
+      <h4>17. Diferencias dimensionales por tolerancia textil</h4>
+      <p>En la confección textil industrial y artesanal existe una tolerancia dimensional natural de hasta +/- 1 a 2 centímetros en las medidas de las prendas terminadas respecto a la tabla de tallas, lo cual se encuentra dentro del margen normal de costura y no se considera una falla de confección.</p>
+
+      <h4>18. Vigencia y modificaciones de las políticas</h4>
+      <p>Confecciones Naryae® se reserva el derecho de modificar, actualizar o complementar estos términos y condiciones en cualquier momento. Las condiciones aplicables a cada pedido serán aquellas vigentes al momento de realizar el abono inicial y confirmar la cotización.</p>
+
+      <h4>19. Horarios y canales oficiales de comunicación</h4>
+      <p>Toda coordinación de presupuestos, toma de medidas, aprobación de diseños y seguimiento de pedidos se realiza exclusivamente a través de nuestros canales oficiales (WhatsApp +56 9 3448 6112 y correo electrónico). El taller no se hace responsable por acuerdos verbales o compromisos tomados por fuera de estos medios.</p>
+
+      <h4>20. Limitación de responsabilidad por pérdida de prendas en arreglos</h4>
+      <p>En caso fortuito de siniestro, robo o daño mayor dentro del taller que afecte a una prenda que el cliente dejó únicamente para servicio de arreglos (no confección nueva), la responsabilidad máxima de compensación por parte de Confecciones Naryae® equivaldrá al valor del costo del servicio de arreglo contratado, y no al valor comercial total de la prenda usada.</p>
+    </div>
+  </div>
+</div>
 
 calcValue.addEventListener('input',()=>{
   const v=Number(calcValue.value),school=calcType.value==='school';
